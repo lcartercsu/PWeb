@@ -150,9 +150,7 @@ export default function HomePage() {
       <section className="bg-gray-900 py-20 text-white md:py-28">
         <div className="mx-auto grid max-w-site gap-10 px-6 md:grid-cols-2 md:items-center">
           <h2 className="text-[32px] font-bold leading-[1.08] tracking-tight md:text-[40px]">
-            Evaluamos su caso
-            <br />
-            sin compromiso.
+            Conversemos.
           </h2>
           <div className="flex flex-col gap-4 md:items-end">
             <div className="space-y-1 text-[14px] text-white/60 md:text-right">
