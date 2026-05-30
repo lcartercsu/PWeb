@@ -2,6 +2,7 @@ import Link from "next/link";
 import { areas } from "@/lib/areas";
 import { team } from "@/lib/team";
 import { site } from "@/lib/site";
+import { ConcepcionSkyline } from "@/components/ConcepcionSkyline";
 
 export default function HomePage() {
   const lead = team.find((t) => t.lead)!;
@@ -9,8 +10,9 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="bg-white pb-20 pt-28 md:pb-28 md:pt-36">
-        <div className="mx-auto max-w-site px-6 text-center">
+      <section className="relative overflow-hidden bg-white pb-20 pt-28 md:pb-28 md:pt-36">
+        <ConcepcionSkyline className="pointer-events-none absolute bottom-0 left-1/2 w-[1400px] max-w-none -translate-x-1/2 text-gray-900/[0.06]" />
+        <div className="relative mx-auto max-w-site px-6 text-center">
           <h1 className="fade-up text-[48px] font-bold leading-[1.04] tracking-tight text-gray-900 md:text-[72px] lg:text-[80px]">
             Derecho laboral.
             <br />
