@@ -28,26 +28,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Números ───────────────────────────────────────── */}
-      <section className="border-y border-gray-200/80 bg-gray-50">
-        <div className="mx-auto grid max-w-site grid-cols-3 divide-x divide-gray-200/80 px-6 text-center">
-          {[
-            { n: "30", sub: "años" },
-            { n: "4", sub: "abogados" },
-            { n: "1", sub: "especialidad" },
-          ].map((s) => (
-            <div key={s.sub} className="py-10 md:py-14">
-              <p className="text-[40px] font-bold leading-none tracking-tight text-gray-900 md:text-[56px]">
-                {s.n}
-              </p>
-              <p className="mt-2 text-[12px] font-medium uppercase tracking-[0.08em] text-gray-500">
-                {s.sub}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── El estudio ────────────────────────────────────── */}
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto grid max-w-site gap-12 px-6 md:grid-cols-2 md:items-center md:gap-20">

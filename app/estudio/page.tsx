@@ -84,26 +84,6 @@ export default function EstudioPage() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200/80 bg-gray-50 py-16 md:py-24">
-        <div className="mx-auto grid max-w-site grid-cols-2 gap-10 px-6 md:grid-cols-4">
-          {[
-            { n: "30", label: "años de ejercicio" },
-            { n: "4", label: "abogados" },
-            { n: "1", label: "oficina" },
-            { n: "Biobío", label: "y sur de Chile" },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="text-[40px] font-bold leading-none tracking-tight text-gray-900 md:text-[48px]">
-                {s.n}
-              </p>
-              <p className="mt-2 text-[12px] font-medium uppercase tracking-[0.08em] text-gray-500">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="bg-gray-900 py-16 md:py-20">
         <div className="mx-auto flex max-w-site flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-md text-[28px] font-bold leading-tight tracking-tight text-white md:text-[32px]">
