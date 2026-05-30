@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { type TeamMember } from "@/lib/team";
 
 type TeamCardProps = {
@@ -11,7 +12,7 @@ export function TeamCard({ member, variant = "standard" }: TeamCardProps) {
     return (
       <article className="grid gap-12 md:grid-cols-[280px_1fr] md:gap-16">
         <div>
-          <Initials value={member.initials} size="lg" />
+          <Avatar member={member} size="lg" />
           <p className="label mt-6">Socio fundador</p>
           <h3 className="mt-2 text-[28px] font-bold leading-tight tracking-tight text-gray-900">
             {member.name}
@@ -56,7 +57,7 @@ export function TeamCard({ member, variant = "standard" }: TeamCardProps) {
 
   return (
     <article className="flex flex-col gap-4">
-      <Initials value={member.initials} size="md" />
+      <Avatar member={member} size="md" />
       <div>
         <h3 className="text-[18px] font-semibold tracking-tight text-gray-900">{member.name}</h3>
         <p className="mt-0.5 text-[13px] text-gray-500">{member.role}</p>
@@ -69,18 +70,34 @@ export function TeamCard({ member, variant = "standard" }: TeamCardProps) {
   );
 }
 
-function Initials({ value, size }: { value: string; size: "md" | "lg" }) {
+function Avatar({ member, size }: { member: TeamMember; size: "md" | "lg" }) {
+  const dims = size === "lg"
+    ? { w: "w-[240px]", h: "h-[320px]" }
+    : { w: "w-full", h: "h-[220px]" };
+
+  if (member.photo) {
+    return (
+      <div className={`relative overflow-hidden ${dims.w} ${dims.h}`}>
+        <Image
+          src={member.photo}
+          alt={member.name}
+          fill
+          className="object-cover object-top grayscale"
+          sizes="(max-width: 768px) 100vw, 280px"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`grid place-items-center bg-gray-50 ${
-        size === "lg" ? "h-[280px] w-[240px]" : "h-[180px] w-full"
-      }`}
+      className={`grid place-items-center bg-gray-50 ${dims.w} ${dims.h}`}
       aria-hidden
     >
       <span className={`font-semibold tracking-tight text-gray-200 ${
         size === "lg" ? "text-[72px]" : "text-[48px]"
       }`}>
-        {value}
+        {member.initials}
       </span>
     </div>
   );

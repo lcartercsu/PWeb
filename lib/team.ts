@@ -3,6 +3,7 @@ export type TeamMember = {
   name: string;
   role: string;
   initials: string;
+  photo?: string;
   lead?: boolean;
   linkedin?: string;
   bio: string;
@@ -16,6 +17,7 @@ export const team: TeamMember[] = [
     name: "Rodrigo García Neiman",
     role: "Socio fundador",
     initials: "RG",
+    photo: "/team/rodrigo.jpg",
     lead: true,
     bio: "Cerca de treinta años de ejercicio profesional en Concepción. Práctica concentrada en derecho laboral, tanto en asesoría a empresas como en representación de trabajadores.",
     focus: [

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { areas } from "@/lib/areas";
 import { team } from "@/lib/team";
 import { site } from "@/lib/site";
@@ -121,11 +122,23 @@ export default function HomePage() {
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto grid max-w-site gap-12 px-6 md:grid-cols-[240px_1fr] md:gap-16">
           <div>
-            <div className="grid h-[260px] w-[200px] place-items-center bg-gray-50 md:h-[300px] md:w-[240px]" aria-hidden>
-              <span className="text-[64px] font-semibold tracking-tight text-gray-200">
-                {lead.initials}
-              </span>
-            </div>
+            {lead.photo ? (
+              <div className="relative h-[280px] w-[200px] overflow-hidden md:h-[320px] md:w-[240px]">
+                <Image
+                  src={lead.photo}
+                  alt={lead.name}
+                  fill
+                  className="object-cover object-top grayscale"
+                  sizes="240px"
+                />
+              </div>
+            ) : (
+              <div className="grid h-[280px] w-[200px] place-items-center bg-gray-50 md:h-[320px] md:w-[240px]" aria-hidden>
+                <span className="text-[64px] font-semibold tracking-tight text-gray-200">
+                  {lead.initials}
+                </span>
+              </div>
+            )}
             <p className="label mt-5">Socio fundador</p>
             <h2 className="mt-2 text-[24px] font-bold leading-tight tracking-tight text-gray-900">
               {lead.name}
