@@ -57,50 +57,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Áreas ─────────────────────────────────────────── */}
+      {/* ── Derecho laboral ──────────────────────────────── */}
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="mx-auto max-w-site px-6">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="label">Áreas de práctica</p>
-              <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
-                Lo que hacemos.
-              </h2>
+          <p className="label">Nuestra especialidad</p>
+          <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+            Derecho laboral.
+          </h2>
+          <p className="mt-4 max-w-[480px] text-[16px] leading-relaxed text-gray-600">
+            Asesoramos tanto a trabajadores como a empleadores. Esa doble
+            experiencia nos permite entender el conflicto desde ambas
+            perspectivas.
+          </p>
+
+          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-gray-200/60 sm:grid-cols-2">
+            <div className="bg-gray-50 p-7 md:p-10">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-gray-900">Para personas</p>
+              <ul className="mt-4 space-y-2 text-[14px] leading-relaxed text-gray-600">
+                <li>Despidos y término de contrato</li>
+                <li>Tutela laboral y derechos fundamentales</li>
+                <li>Accidentes del trabajo</li>
+                <li>Cobro de prestaciones y finiquitos</li>
+                <li>Seguridad social</li>
+              </ul>
+            </div>
+            <div className="bg-gray-50 p-7 md:p-10">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-gray-900">Para empresas</p>
+              <ul className="mt-4 space-y-2 text-[14px] leading-relaxed text-gray-600">
+                <li>Auditorías y cumplimiento laboral</li>
+                <li>Reglamentos internos y políticas</li>
+                <li>Defensa ante la Dirección del Trabajo</li>
+                <li>Negociación colectiva</li>
+                <li>Reestructuraciones</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-gray-200/80 pt-8">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-gray-500">
+              También asesoramos en
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {areas.filter(a => !a.featured).map((area) => (
+                <span
+                  key={area.slug}
+                  className="rounded-full bg-white px-4 py-2 text-[13px] text-gray-600 border border-gray-200/80"
+                >
+                  {area.title}
+                </span>
+              ))}
             </div>
             <Link
               href="/areas"
-              className="hidden text-[14px] font-medium text-gray-900 hover:text-gray-600 sm:block"
+              className="mt-5 inline-flex text-[14px] font-medium text-gray-900 hover:text-gray-600"
             >
-              Ver todas →
+              Ver todas las áreas →
             </Link>
           </div>
-
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-gray-200/60 sm:grid-cols-2 md:grid-cols-3">
-            {areas.slice(0, 6).map((area) => (
-              <Link
-                key={area.slug}
-                href="/areas"
-                className="group flex flex-col gap-2 bg-gray-50 p-6 transition-colors hover:bg-white md:p-8"
-              >
-                <h3 className="text-[17px] font-semibold tracking-tight text-gray-900">
-                  {area.title}
-                </h3>
-                <p className="text-[13px] leading-relaxed text-gray-500">
-                  {area.summary}
-                </p>
-                <span className="mt-auto pt-3 text-[12px] font-medium text-gray-500 transition-colors group-hover:text-gray-900">
-                  Ver detalle →
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <Link
-            href="/areas"
-            className="mt-6 inline-flex text-[14px] font-medium text-gray-900 hover:text-gray-600 sm:hidden"
-          >
-            Ver todas las áreas →
-          </Link>
         </div>
       </section>
 
