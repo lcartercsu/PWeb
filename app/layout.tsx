@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 import { site } from "@/lib/site";
 import "./globals.css";
-
-const serif = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 const sans = Outfit({
   subsets: ["latin"],
@@ -42,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es-CL" className={`${serif.variable} ${sans.variable}`}>
-      <body className="flex min-h-screen flex-col bg-white text-[#1d1d1f] antialiased">
+    <html lang="es-CL" className={sans.variable}>
+      <body>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -14,19 +14,19 @@ export const team: TeamMember[] = [
   {
     slug: "rodrigo-garcia-neiman",
     name: "Rodrigo García Neiman",
-    role: "Socio principal · Director del estudio",
+    role: "Socio fundador",
     initials: "RG",
     lead: true,
-    bio: "Abogado con cerca de treinta años de ejercicio profesional en la ciudad de Concepción. Su práctica se ha concentrado en derecho laboral, tanto en la asesoría permanente a empresas como en la representación de trabajadores en procedimientos ante los tribunales de justicia. Ha conducido negociaciones colectivas, defensa en juicios de tutela laboral, despidos, accidentes del trabajo y reestructuraciones, privilegiando siempre soluciones equilibradas y conformes a derecho.",
+    bio: "Cerca de treinta años de ejercicio profesional en Concepción. Práctica concentrada en derecho laboral, tanto en asesoría a empresas como en representación de trabajadores.",
     focus: [
       "Derecho laboral individual y colectivo",
-      "Litigación laboral y previsional",
-      "Asesoría a comités paritarios y mesas de negociación",
-      "Cumplimiento normativo en materia de trabajo",
+      "Litigación laboral",
+      "Negociación colectiva",
+      "Cumplimiento normativo",
     ],
     linkedin: "https://www.linkedin.com/in/rodrigo-garc%C3%ADa-neiman-4560852a9/",
     education: [
-      "Licenciado en Ciencias Jurídicas y Sociales, Pontificia Universidad Católica de Chile, Sede Talcahuano",
+      "Licenciado en Ciencias Jurídicas, Pontificia Universidad Católica de Chile",
     ],
   },
   {
@@ -34,14 +34,14 @@ export const team: TeamMember[] = [
     name: "María José Placeholder",
     role: "Abogada asociada",
     initials: "MP",
-    bio: "Abogada dedicada al ejercicio en derecho laboral y seguridad social, con experiencia en el litigio ante los Juzgados de Letras del Trabajo y en la elaboración de auditorías de cumplimiento laboral para empresas de mediano tamaño.",
+    bio: "Dedicada al derecho laboral y seguridad social. Experiencia en litigio ante Juzgados del Trabajo y auditorías de cumplimiento.",
     focus: [
-      "Procedimientos de aplicación general y monitorios",
-      "Sumarios administrativos y fiscalización DT",
-      "Asesoría en reglamentos internos y políticas",
+      "Procedimientos laborales",
+      "Fiscalización y sumarios",
+      "Políticas y reglamentos internos",
     ],
     education: [
-      "Licenciada en Ciencias Jurídicas, Universidad Católica de la Santísima Concepción",
+      "Licenciada en Ciencias Jurídicas, UCSC",
     ],
   },
   {
@@ -49,14 +49,14 @@ export const team: TeamMember[] = [
     name: "Ignacio Placeholder",
     role: "Abogado asociado",
     initials: "IP",
-    bio: "Se integra al estudio con foco en derecho civil patrimonial y asesoría a personas naturales. Apoya transversalmente las causas laborales en materias contractuales y de responsabilidad civil conexa.",
+    bio: "Foco en derecho civil patrimonial y asesoría a personas. Apoyo transversal en causas laborales con materias contractuales conexas.",
     focus: [
-      "Derecho civil patrimonial y de familia",
+      "Derecho civil y de familia",
       "Contratos y responsabilidad civil",
       "Asesoría integral a personas",
     ],
     education: [
-      "Licenciado en Ciencias Jurídicas y Sociales, Universidad de Concepción",
+      "Licenciado en Ciencias Jurídicas, Universidad de Concepción",
     ],
   },
   {
@@ -64,14 +64,14 @@ export const team: TeamMember[] = [
     name: "Consuelo Placeholder",
     role: "Abogada asociada",
     initials: "CP",
-    bio: "Abogada con interés en derecho corporativo y cumplimiento. Colabora con clientes empresariales en materias de contratación, gobierno interno y prevención de riesgos laborales.",
+    bio: "Interés en derecho corporativo y cumplimiento. Colabora con clientes empresariales en contratación y prevención de riesgos.",
     focus: [
-      "Derecho corporativo y contractual",
+      "Derecho corporativo",
       "Compliance y prevención",
-      "Asesoría permanente a empresas",
+      "Asesoría a empresas",
     ],
     education: [
-      "Licenciada en Ciencias Jurídicas y Sociales, Universidad de Concepción",
+      "Licenciada en Ciencias Jurídicas, Universidad de Concepción",
     ],
   },
 ];

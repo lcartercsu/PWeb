@@ -1,43 +1,39 @@
 import Link from "next/link";
 import { type PracticeArea } from "@/lib/areas";
 
-type PracticeAreaCardProps = {
+export function PracticeAreaCard({
+  area,
+  index,
+}: {
   area: PracticeArea;
   index: number;
-};
-
-export function PracticeAreaCard({ area, index }: PracticeAreaCardProps) {
-  const number = String(index + 1).padStart(2, "0");
-
+}) {
   return (
-    <article className="grid gap-8 border-t border-[#d2d2d7]/60 py-10 md:grid-cols-[auto_1fr_auto] md:items-start md:gap-14">
-      <span className="font-serif text-[13px] text-gold">{number}</span>
+    <article className="grid gap-6 border-t border-gray-200/80 py-8 md:grid-cols-[auto_1fr_auto] md:items-start md:gap-12">
+      <span className="text-[13px] font-semibold text-gray-200">
+        {String(index + 1).padStart(2, "0")}
+      </span>
 
-      <div className="max-w-2xl">
-        <h3 className="font-serif text-[24px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[28px]">
+      <div className="max-w-lg">
+        <h3 className="text-[20px] font-semibold tracking-tight text-gray-900">
           {area.title}
         </h3>
-        <p className="mt-3 text-[15px] leading-relaxed text-[#6e6e73] md:text-[16px]">
+        <p className="mt-2 text-[14px] leading-relaxed text-gray-600">
           {area.summary}
         </p>
-        <ul className="mt-5 grid gap-2 text-[13px] text-[#6e6e73] md:grid-cols-2">
+        <ul className="mt-4 grid gap-1 text-[13px] text-gray-500 sm:grid-cols-2">
           {area.bullets.map((b) => (
-            <li key={b} className="flex gap-3 leading-relaxed">
-              <span aria-hidden className="mt-[6px] inline-block h-px w-3 shrink-0 bg-gold/60" />
-              {b}
-            </li>
+            <li key={b}>{b}</li>
           ))}
         </ul>
       </div>
 
-      <div className="hidden md:block">
-        <Link
-          href="/contacto"
-          className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors"
-        >
-          Consultar →
-        </Link>
-      </div>
+      <Link
+        href="/contacto"
+        className="hidden text-[13px] text-gray-500 hover:text-gray-900 md:block"
+      >
+        Consultar →
+      </Link>
     </article>
   );
 }

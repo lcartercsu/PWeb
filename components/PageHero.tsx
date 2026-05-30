@@ -10,39 +10,31 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, lead, breadcrumb }: PageHeroProps) {
   return (
-    <section className="border-b border-[#d2d2d7]/50 bg-white pt-[80px]">
-      <div className="mx-auto w-full max-w-[1180px] px-6 py-16 md:px-10 md:py-24">
+    <section className="bg-white pt-20">
+      <div className="mx-auto max-w-site px-6 pb-14 pt-12 md:pb-20 md:pt-16">
         {breadcrumb && (
-          <nav aria-label="Ruta" className="mb-8 text-[12px] text-[#86868b]">
-            <ol className="flex flex-wrap items-center gap-2">
-              {breadcrumb.map((crumb, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  {crumb.href ? (
-                    <Link href={crumb.href} className="hover:text-[#1d1d1f] transition-colors">
-                      {crumb.label}
-                    </Link>
+          <nav aria-label="Ruta" className="mb-8 text-[12px] text-gray-500">
+            <ol className="flex items-center gap-1.5">
+              {breadcrumb.map((c, i) => (
+                <li key={i} className="flex items-center gap-1.5">
+                  {c.href ? (
+                    <Link href={c.href} className="hover:text-gray-900">{c.label}</Link>
                   ) : (
-                    <span className="text-[#1d1d1f]">{crumb.label}</span>
+                    <span className="text-gray-900">{c.label}</span>
                   )}
-                  {i < breadcrumb.length - 1 && (
-                    <span className="text-[#d2d2d7]">/</span>
-                  )}
+                  {i < breadcrumb.length - 1 && <span className="text-gray-200">/</span>}
                 </li>
               ))}
             </ol>
           </nav>
         )}
 
-        <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-          {eyebrow}
-        </span>
-
-        <h1 className="mt-4 max-w-3xl font-serif text-[40px] font-medium leading-[1.06] tracking-tight text-[#1d1d1f] md:text-[56px]">
+        <p className="label">{eyebrow}</p>
+        <h1 className="mt-3 max-w-[680px] text-[40px] font-bold leading-[1.05] tracking-tight text-gray-900 md:text-[56px]">
           {title}
         </h1>
-
         {lead && (
-          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-[#6e6e73]">
+          <p className="mt-5 max-w-[520px] text-[17px] leading-relaxed text-gray-600">
             {lead}
           </p>
         )}

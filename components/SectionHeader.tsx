@@ -4,7 +4,6 @@ type SectionHeaderProps = {
   eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
-  align?: "left" | "center";
   className?: string;
 };
 
@@ -12,24 +11,16 @@ export function SectionHeader({
   eyebrow,
   title,
   description,
-  align = "left",
   className = "",
 }: SectionHeaderProps) {
-  const alignment =
-    align === "center" ? "items-center text-center" : "items-start text-left";
-
   return (
-    <div className={`flex flex-col gap-4 ${alignment} ${className}`}>
-      {eyebrow && (
-        <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="max-w-2xl font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
+    <div className={`flex flex-col gap-3 ${className}`}>
+      {eyebrow && <p className="label">{eyebrow}</p>}
+      <h2 className="max-w-[520px] text-[32px] font-bold leading-[1.1] tracking-tight text-gray-900 md:text-[40px]">
         {title}
       </h2>
       {description && (
-        <p className="max-w-prose text-[16px] leading-relaxed text-[#6e6e73] md:text-[17px]">
+        <p className="max-w-[460px] text-[16px] leading-relaxed text-gray-600">
           {description}
         </p>
       )}

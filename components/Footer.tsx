@@ -3,72 +3,44 @@ import { site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#1d1d1f] text-white/70">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-[2fr_1fr_1fr] md:py-16">
+    <footer className="bg-gray-50 text-gray-600">
+      <div className="mx-auto grid max-w-wide gap-10 px-6 py-14 text-[13px] leading-relaxed sm:grid-cols-3">
         <div>
-          <p className="font-serif text-[20px] tracking-tight text-white">
-            García Neiman
-          </p>
-          <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/35">
-            & Asociados · Abogados
-          </p>
-          <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/55">
-            Estudio jurídico en Concepción con casi tres décadas de experiencia
-            asesorando a personas y empresas.
+          <p className="text-[15px] font-semibold text-gray-900">García Neiman</p>
+          <p className="mt-3 max-w-[240px] text-gray-500">
+            Estudio jurídico en Concepción. Casi tres décadas de experiencia.
           </p>
         </div>
 
-        <div>
-          <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-white/35">
-            Contacto
-          </p>
-          <dl className="space-y-2 text-[14px]">
-            <dd>{site.contact.address}</dd>
-            <dd>{site.contact.city}</dd>
-            <dd>
-              <a
-                href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-                className="hover:text-white transition-colors"
-              >
-                {site.contact.phone}
-              </a>
-            </dd>
-            <dd>
-              <a
-                href={`mailto:${site.contact.email}`}
-                className="hover:text-white transition-colors"
-              >
-                {site.contact.email}
-              </a>
-            </dd>
-            <dd className="text-white/35 text-[13px] pt-1">{site.contact.hours}</dd>
-          </dl>
+        <div className="space-y-2">
+          <p className="label mb-3">Contacto</p>
+          <p>{site.contact.address}</p>
+          <p>{site.contact.city}</p>
+          <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="block hover:text-gray-900">
+            {site.contact.phone}
+          </a>
+          <a href={`mailto:${site.contact.email}`} className="block hover:text-gray-900">
+            {site.contact.email}
+          </a>
+          <p className="text-gray-500">{site.contact.hours}</p>
         </div>
 
         <div>
-          <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-white/35">
-            Navegación
-          </p>
-          <ul className="space-y-2 text-[14px]">
-            {site.nav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:text-white transition-colors">
-                  {item.label}
-                </Link>
+          <p className="label mb-3">Navegación</p>
+          <ul className="space-y-2">
+            {site.nav.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-gray-900">{l.label}</Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start justify-between gap-1 px-6 py-4 text-[12px] text-white/25 md:flex-row md:items-center">
-          <p>
-            © {new Date().getFullYear()} García Neiman y Asociados. Todos los
-            derechos reservados.
-          </p>
-          <p>{site.domain}</p>
-        </div>
+      <div className="border-t border-gray-200/60">
+        <p className="mx-auto max-w-wide px-6 py-4 text-[11px] text-gray-500">
+          © {new Date().getFullYear()} García Neiman y Asociados
+        </p>
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ import { team } from "@/lib/team";
 export const metadata: Metadata = {
   title: "Equipo",
   description:
-    "Equipo de abogados de García Neiman y Asociados, dirigido por Rodrigo García Neiman en Concepción.",
+    "Equipo de abogados de García Neiman y Asociados en Concepción.",
 };
 
 export default function EquipoPage() {
@@ -18,33 +18,29 @@ export default function EquipoPage() {
     <>
       <PageHero
         eyebrow="Equipo"
-        title="Cuatro abogados integrados bajo un mismo criterio de trabajo."
-        lead="El estudio es dirigido por Rodrigo García Neiman y cuenta con un equipo de abogados y abogadas que participan directamente en el estudio y defensa de los asuntos encomendados."
+        title="Cuatro abogados. Un criterio."
+        lead="Equipo integrado bajo la dirección de Rodrigo García Neiman. Cada abogado participa directamente en los asuntos encomendados."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Equipo" }]}
       />
 
-      {/* SOCIO PRINCIPAL */}
-      <section className="bg-white py-20 md:py-28">
-        <Container>
+      <section className="bg-gray-50 py-16 md:py-24">
+        <div className="mx-auto max-w-site px-6">
           <TeamCard member={lead} variant="lead" />
-        </Container>
+        </div>
       </section>
 
-      {/* ASOCIADOS */}
-      <section className="bg-[#f5f5f7] py-20 md:py-28">
-        <Container>
-          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-            Asociados
-          </span>
-          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
-            Abogados y abogadas asociadas del estudio.
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-site px-6">
+          <p className="label">Asociados</p>
+          <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+            El resto del equipo.
           </h2>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {associates.map((member) => (
-              <TeamCard key={member.slug} member={member} />
+          <div className="mt-10 grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {associates.map((m) => (
+              <TeamCard key={m.slug} member={m} />
             ))}
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );

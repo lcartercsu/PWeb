@@ -6,25 +6,25 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Estudio",
   description:
-    "García Neiman y Asociados es un estudio jurídico de Concepción con cerca de tres décadas de experiencia, con foco en derecho laboral.",
+    "García Neiman y Asociados es un estudio jurídico de Concepción con cerca de tres décadas de experiencia.",
 };
 
 const principles = [
   {
     title: "Criterio técnico",
-    body: "Cada asunto se aborda con rigor jurídico y análisis fundado, evitando diagnósticos apresurados y priorizando soluciones estables en el tiempo.",
+    body: "Rigor jurídico. Análisis fundado. Soluciones estables en el tiempo.",
   },
   {
     title: "Trato directo",
-    body: "El cliente conversa con los abogados que efectivamente llevan su causa. Creemos en una relación profesional cercana, informada y sin intermediaciones.",
+    body: "El cliente conversa con los abogados que llevan su causa. Sin intermediaciones.",
   },
   {
     title: "Discreción",
-    body: "La confidencialidad es parte esencial de nuestra práctica. Cuidamos la información de nuestros clientes dentro y fuera de los procesos.",
+    body: "Confidencialidad dentro y fuera de los procesos. Sin excepciones.",
   },
   {
     title: "Equilibrio",
-    body: "Asesoramos tanto a personas como a empresas. Esa doble experiencia nos permite entender el conflicto desde ambas perspectivas y anticipar sus efectos.",
+    body: "Asesoramos a personas y empresas. Entendemos el conflicto desde ambas perspectivas.",
   },
 ];
 
@@ -33,106 +33,86 @@ export default function EstudioPage() {
     <>
       <PageHero
         eyebrow="El estudio"
-        title="Un estudio jurídico en Concepción con una tradición de trabajo serio y continuo."
-        lead="García Neiman y Asociados nació y se mantiene en Concepción. Durante casi tres décadas hemos acompañado a personas, familias y empresas de la Región del Biobío en materias jurídicas de diversa complejidad."
+        title="Trabajo serio y continuo desde 1996."
+        lead="Nacimos y seguimos en Concepción. Casi tres décadas acompañando a personas y empresas del Biobío."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Estudio" }]}
       />
 
-      {/* NARRATIVA */}
-      <section className="bg-white py-20 md:py-28">
-        <Container className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-24">
+      <section className="bg-gray-50 py-16 md:py-24">
+        <div className="mx-auto grid max-w-site gap-12 px-6 md:grid-cols-2 md:gap-20">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-              Quiénes somos
-            </span>
-            <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
-              Una práctica construida desde la experiencia laboral.
+            <p className="label">Quiénes somos</p>
+            <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+              Construido desde la experiencia laboral.
             </h2>
           </div>
-          <div className="space-y-5 text-[16px] leading-relaxed text-[#6e6e73]">
+          <div className="space-y-4 text-[15px] leading-relaxed text-gray-600">
             <p>
               Bajo la dirección de Rodrigo García Neiman, el estudio se ha
-              consolidado como una firma de referencia regional en derecho
-              laboral. A partir de esa base hemos extendido nuestro ejercicio
-              a las áreas civil, de familia, corporativa y administrativa.
+              consolidado como referencia regional en derecho laboral. Desde esa
+              base extendimos la práctica a áreas civil, de familia, corporativa
+              y administrativa.
             </p>
             <p>
-              Somos un equipo pequeño y por diseño. Creemos que la calidad del
-              trabajo jurídico depende de la dedicación personal de los abogados
-              a cada asunto. Mantenemos una cartera acotada de clientes y
-              privilegiamos relaciones de largo plazo.
-            </p>
-            <p>
-              Nuestra oficina se encuentra en el centro de Concepción y desde
-              ahí atendemos causas en toda la Región del Biobío.
+              Somos un equipo pequeño y por diseño. La calidad depende de la
+              dedicación personal a cada asunto. Mantenemos una cartera acotada
+              y privilegiamos relaciones de largo plazo.
             </p>
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* PRINCIPIOS */}
-      <section className="bg-[#f5f5f7] py-20 md:py-28">
-        <Container>
-          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-            Principios de trabajo
-          </span>
-          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
-            Cuatro criterios que orientan nuestra práctica.
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-site px-6">
+          <p className="label">Principios</p>
+          <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+            Cómo trabajamos.
           </h2>
-          <div className="mt-12 grid gap-[1px] bg-[#d2d2d7]/50 md:grid-cols-2">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-gray-200/60 sm:grid-cols-2">
             {principles.map((p, i) => (
-              <div
-                key={p.title}
-                className="flex flex-col gap-4 bg-[#f5f5f7] p-8 md:p-10"
-              >
-                <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+              <div key={p.title} className="flex flex-col gap-2 bg-white p-7 md:p-10">
+                <span className="text-[13px] font-semibold text-gray-200">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-serif text-[24px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+                <h3 className="text-[20px] font-semibold tracking-tight text-gray-900">
                   {p.title}
                 </h3>
-                <p className="text-[15px] leading-relaxed text-[#6e6e73]">
-                  {p.body}
-                </p>
+                <p className="text-[14px] leading-relaxed text-gray-600">{p.body}</p>
               </div>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* CIFRAS */}
-      <section className="bg-white py-20 md:py-28">
-        <Container>
-          <div className="grid gap-10 border-t border-[#d2d2d7]/60 pt-12 sm:grid-cols-2 md:grid-cols-4">
-            {[
-              { k: "~30", v: "Años de ejercicio" },
-              { k: "4", v: "Abogados integrados" },
-              { k: "1", v: "Oficina en Concepción" },
-              { k: "Biobío", v: "y sur de Chile" },
-            ].map((item) => (
-              <div key={item.v}>
-                <p className="font-serif text-[52px] font-medium leading-none tracking-tight text-[#1d1d1f]">
-                  {item.k}
-                </p>
-                <p className="mt-3 text-[12px] uppercase tracking-[0.16em] text-[#86868b]">
-                  {item.v}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
+      <section className="border-t border-gray-200/80 bg-gray-50 py-16 md:py-24">
+        <div className="mx-auto grid max-w-site grid-cols-2 gap-10 px-6 md:grid-cols-4">
+          {[
+            { n: "30", label: "años de ejercicio" },
+            { n: "4", label: "abogados" },
+            { n: "1", label: "oficina" },
+            { n: "Biobío", label: "y sur de Chile" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="text-[40px] font-bold leading-none tracking-tight text-gray-900 md:text-[48px]">
+                {s.n}
+              </p>
+              <p className="mt-2 text-[12px] font-medium uppercase tracking-[0.08em] text-gray-500">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#1d1d1f]">
-        <Container className="flex flex-col items-start gap-8 py-20 md:flex-row md:items-center md:justify-between md:py-24">
-          <h2 className="max-w-xl font-serif text-[32px] font-medium leading-tight tracking-tight text-white md:text-[40px]">
-            Conozca a las personas que conforman el estudio.
+      <section className="bg-gray-900 py-16 md:py-20">
+        <div className="mx-auto flex max-w-site flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
+          <h2 className="max-w-md text-[28px] font-bold leading-tight tracking-tight text-white md:text-[32px]">
+            Conozca al equipo.
           </h2>
-          <Link href="/equipo" className="btn-primary bg-white text-[#1d1d1f] hover:bg-white/85 shrink-0">
+          <Link href="/equipo" className="btn bg-white text-gray-900 hover:bg-white/90">
             Ir al equipo →
           </Link>
-        </Container>
+        </div>
       </section>
     </>
   );

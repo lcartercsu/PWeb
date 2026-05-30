@@ -5,8 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description:
-    "Contacto con García Neiman y Asociados. Oficina en Concepción, Región del Biobío.",
+  description: "Contacto con García Neiman y Asociados en Concepción.",
 };
 
 export default function ContactoPage() {
@@ -14,136 +13,109 @@ export default function ContactoPage() {
     <>
       <PageHero
         eyebrow="Contacto"
-        title="Evaluamos su caso con reserva y sin compromiso inicial."
-        lead="Si desea conversar con nosotros, puede escribirnos, llamarnos o visitar la oficina en el centro de Concepción. Responderemos dentro del siguiente día hábil."
+        title="Conversemos."
+        lead="Escriba, llame o visite nuestra oficina. Respondemos dentro del día hábil siguiente."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Contacto" }]}
       />
 
-      <section className="bg-white py-20 md:py-28">
-        <Container className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-20">
-          {/* INFORMACIÓN */}
-          <div className="flex flex-col gap-10">
+      <section className="bg-gray-50 py-16 md:py-24">
+        <div className="mx-auto grid max-w-site gap-14 px-6 md:grid-cols-2 md:gap-20">
+          {/* Info */}
+          <div className="flex flex-col gap-8">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Oficina</p>
-              <p className="mt-3 font-serif text-[28px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+              <p className="label">Oficina</p>
+              <p className="mt-3 text-[24px] font-bold leading-tight tracking-tight text-gray-900">
                 {site.contact.address}
               </p>
-              <p className="mt-1 text-[16px] text-[#6e6e73]">{site.contact.city}</p>
+              <p className="mt-1 text-[15px] text-gray-600">{site.contact.city}</p>
             </div>
 
-            <div className="grid gap-8 border-t border-[#d2d2d7]/60 pt-8 sm:grid-cols-2">
+            <div className="grid gap-6 border-t border-gray-200/80 pt-6 sm:grid-cols-2">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Teléfono</p>
+                <p className="label">Teléfono</p>
                 <a
                   href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-                  className="mt-3 block font-serif text-[22px] font-medium text-[#1d1d1f] hover:text-[#6e6e73]"
+                  className="mt-2 block text-[18px] font-semibold text-gray-900 hover:text-gray-600"
                 >
                   {site.contact.phone}
                 </a>
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Correo</p>
+                <p className="label">Correo</p>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="mt-3 block font-serif text-[18px] font-medium text-[#1d1d1f] hover:text-[#6e6e73] break-all"
+                  className="mt-2 block text-[16px] font-semibold text-gray-900 hover:text-gray-600 break-all"
                 >
                   {site.contact.email}
                 </a>
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Horario</p>
-                <p className="mt-3 text-[15px] text-[#6e6e73]">{site.contact.hours}</p>
+                <p className="label">Horario</p>
+                <p className="mt-2 text-[14px] text-gray-600">{site.contact.hours}</p>
               </div>
             </div>
 
-            <div className="border-t border-[#d2d2d7]/60 pt-8">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-gold">
-                Reserva y confidencialidad
-              </p>
-              <p className="mt-4 text-[14px] leading-relaxed text-[#6e6e73]">
-                Toda consulta será tratada con estricta confidencialidad.
-                Nuestra respuesta inicial no implica la aceptación del encargo
-                ni la constitución formal de una relación profesional.
+            <div className="border-t border-gray-200/80 pt-6">
+              <p className="text-[13px] leading-relaxed text-gray-500">
+                Toda consulta se trata con estricta confidencialidad.
+                La respuesta inicial no implica aceptación del encargo.
               </p>
             </div>
           </div>
 
-          {/* FORMULARIO */}
-          <div className="border-t border-[#d2d2d7]/60 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
-            <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-              Enviar consulta
-            </span>
-            <h2 className="mt-4 font-serif text-[32px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+          {/* Form */}
+          <div>
+            <p className="label">Enviar consulta</p>
+            <h2 className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-gray-900">
               Cuéntenos su caso.
             </h2>
 
-            <form
-              method="post"
-              action="#"
-              className="mt-8 grid gap-6"
-              aria-label="Formulario de contacto"
-            >
-              <Field label="Nombre completo *" name="nombre" required />
-              <div className="grid gap-6 sm:grid-cols-2">
-                <Field label="Correo electrónico *" name="email" type="email" required />
+            <form method="post" action="#" className="mt-6 grid gap-5" aria-label="Contacto">
+              <Field label="Nombre *" name="nombre" required />
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field label="Email *" name="email" type="email" required />
                 <Field label="Teléfono" name="telefono" type="tel" />
               </div>
-              <Field label="Materia de la consulta" name="materia" />
-              <div className="flex flex-col gap-2">
-                <label htmlFor="mensaje" className="text-[11px] uppercase tracking-[0.22em] text-gold">
-                  Mensaje *
-                </label>
+              <Field label="Materia" name="materia" />
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="mensaje" className="label">Mensaje *</label>
                 <textarea
                   id="mensaje"
                   name="mensaje"
                   required
-                  rows={5}
-                  className="border-b border-[#d2d2d7] bg-transparent py-3 text-[15px] text-[#1d1d1f] outline-none transition-colors focus:border-[#1d1d1f] placeholder:text-[#86868b]"
+                  rows={4}
+                  className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-[14px] text-gray-900 outline-none transition-colors focus:border-gray-900 placeholder:text-gray-500"
                 />
               </div>
 
-              <label className="flex items-start gap-3 pt-1 text-[13px] leading-relaxed text-[#6e6e73]">
-                <input
-                  type="checkbox"
-                  name="privacidad"
-                  required
-                  className="mt-[2px] h-4 w-4 shrink-0 accent-[#1d1d1f]"
-                />
-                <span>
-                  Acepto que los datos entregados se utilizarán exclusivamente
-                  para dar respuesta a esta consulta. *
-                </span>
+              <label className="flex items-start gap-2.5 text-[13px] leading-relaxed text-gray-500">
+                <input type="checkbox" name="privacidad" required className="mt-0.5 h-4 w-4 accent-gray-900" />
+                Acepto que los datos se usen exclusivamente para responder esta consulta. *
               </label>
 
-              <div className="pt-2">
-                <button type="submit" className="btn-primary">
-                  Enviar consulta
-                </button>
-              </div>
+              <button type="submit" className="btn-dark mt-1 w-fit">
+                Enviar
+              </button>
             </form>
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* MAPA */}
-      <section className="bg-[#f5f5f7] py-16">
-        <Container>
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      {/* Mapa */}
+      <section className="bg-white py-12 md:py-16">
+        <div className="mx-auto max-w-site px-6">
+          <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="text-[11px] uppercase tracking-[0.22em] text-gold">Ubicación</span>
-              <h3 className="mt-3 font-serif text-[28px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+              <p className="label">Ubicación</p>
+              <h3 className="mt-2 text-[24px] font-bold tracking-tight text-gray-900">
                 Centro de Concepción
               </h3>
             </div>
-            <p className="max-w-sm text-[14px] text-[#6e6e73]">
-              A pocos minutos caminando de los Tribunales de Justicia de
-              Concepción, con estacionamientos en las inmediaciones.
+            <p className="max-w-xs text-[13px] text-gray-500">
+              A minutos de los Tribunales de Justicia. Estacionamientos en las inmediaciones.
             </p>
           </div>
-          <div
-            className="overflow-hidden border border-[#d2d2d7]/60"
-            style={{ aspectRatio: "16/7" }}
-          >
+          <div className="overflow-hidden rounded-xl border border-gray-200/80" style={{ aspectRatio: "16/7" }}>
             <iframe
               title="Ubicación García Neiman y Asociados"
               src="https://maps.google.com/maps?q=Colo-Colo+379,+Concepci%C3%B3n,+Chile&t=&z=17&ie=UTF8&iwloc=&output=embed"
@@ -155,34 +127,24 @@ export default function ContactoPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  required = false,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
+function Field({ label, name, type = "text", required = false }: {
+  label: string; name: string; type?: string; required?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor={name} className="text-[11px] uppercase tracking-[0.22em] text-gold">
-        {label}
-      </label>
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor={name} className="label">{label}</label>
       <input
         id={name}
         name={name}
         type={type}
         required={required}
-        className="border-b border-[#d2d2d7] bg-transparent py-3 text-[15px] text-[#1d1d1f] outline-none transition-colors focus:border-[#1d1d1f]"
+        className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-[14px] text-gray-900 outline-none transition-colors focus:border-gray-900"
       />
     </div>
   );

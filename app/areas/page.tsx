@@ -8,7 +8,7 @@ import { areas } from "@/lib/areas";
 export const metadata: Metadata = {
   title: "Áreas de práctica",
   description:
-    "Áreas de práctica de García Neiman y Asociados: derecho laboral, civil, familia, corporativo, litigación y derecho administrativo.",
+    "Derecho laboral, civil, familia, corporativo, litigación y administrativo.",
 };
 
 export default function AreasPage() {
@@ -19,82 +19,68 @@ export default function AreasPage() {
     <>
       <PageHero
         eyebrow="Áreas de práctica"
-        title="Especialidad en derecho laboral y asesoría transversal."
-        lead="Nuestro trabajo se concentra en el derecho laboral, desde el cual hemos desarrollado también una práctica habitual en asuntos civiles, de familia, corporativos y administrativos."
+        title="Especialidad laboral. Asesoría integral."
+        lead="Concentramos nuestro trabajo en derecho laboral con práctica complementaria en áreas civil, familia, corporativa y administrativa."
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Áreas de práctica" },
         ]}
       />
 
-      {/* ÁREA PRINCIPAL */}
       {featured && (
-        <section className="bg-white py-20 md:py-28">
-          <Container>
-            <div className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-20">
-              <div>
-                <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-                  Área principal
-                </span>
-                <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
-                  {featured.title}
-                </h2>
-                <p className="mt-5 text-[16px] leading-relaxed text-[#6e6e73]">
-                  {featured.summary}
-                </p>
-                <Link href="/contacto" className="btn-primary mt-8 text-[13px]">
-                  Consultar un caso laboral
-                </Link>
-              </div>
+        <section className="bg-gray-50 py-16 md:py-24">
+          <div className="mx-auto grid max-w-site gap-12 px-6 md:grid-cols-2 md:gap-20">
+            <div>
+              <p className="label">Área principal</p>
+              <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+                {featured.title}
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-gray-600">
+                {featured.summary}
+              </p>
+              <Link href="/contacto" className="btn-dark mt-6 !text-[13px]">
+                Consultar un caso
+              </Link>
+            </div>
 
-              <div className="border-t border-[#d2d2d7]/60 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
-                <div className="grid gap-10 md:grid-cols-2">
-                  <div>
-                    <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
-                      Para personas
-                    </p>
-                    <ul className="space-y-2.5 text-[14px] leading-relaxed text-[#6e6e73]">
-                      <li>Despidos y término del contrato de trabajo</li>
-                      <li>Tutela laboral y derechos fundamentales</li>
-                      <li>Accidentes del trabajo y enfermedades profesionales</li>
-                      <li>Cobro de prestaciones y finiquitos</li>
-                      <li>Asuntos previsionales y de seguridad social</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
-                      Para empresas
-                    </p>
-                    <ul className="space-y-2.5 text-[14px] leading-relaxed text-[#6e6e73]">
-                      <li>Auditorías y cumplimiento laboral</li>
-                      <li>Reglamentos internos y políticas</li>
-                      <li>Defensa ante la Dirección del Trabajo</li>
-                      <li>Negociación colectiva y relaciones sindicales</li>
-                      <li>Reestructuraciones y término de relaciones laborales</li>
-                    </ul>
-                  </div>
-                </div>
+            <div className="grid gap-8 sm:grid-cols-2">
+              <div>
+                <p className="label mb-3">Para personas</p>
+                <ul className="space-y-2 text-[14px] text-gray-600">
+                  <li>Despidos y término de contrato</li>
+                  <li>Tutela laboral</li>
+                  <li>Accidentes del trabajo</li>
+                  <li>Cobro de prestaciones</li>
+                  <li>Seguridad social</li>
+                </ul>
+              </div>
+              <div>
+                <p className="label mb-3">Para empresas</p>
+                <ul className="space-y-2 text-[14px] text-gray-600">
+                  <li>Auditorías y cumplimiento</li>
+                  <li>Reglamentos internos</li>
+                  <li>Dirección del Trabajo</li>
+                  <li>Negociación colectiva</li>
+                  <li>Reestructuraciones</li>
+                </ul>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
       )}
 
-      {/* RESTO DE ÁREAS */}
-      <section className="bg-[#f5f5f7] py-20 md:py-28">
-        <Container>
-          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
-            Otras áreas
-          </span>
-          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
-            Prácticas complementarias del estudio.
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-site px-6">
+          <p className="label">Otras áreas</p>
+          <h2 className="mt-3 text-[32px] font-bold leading-[1.08] tracking-tight text-gray-900 md:text-[40px]">
+            Prácticas complementarias.
           </h2>
-          <div className="mt-10">
+          <div className="mt-8">
             {rest.map((area, i) => (
               <PracticeAreaCard key={area.slug} area={area} index={i + 1} />
             ))}
           </div>
-        </Container>
+        </div>
       </section>
     </>
   );

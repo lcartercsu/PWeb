@@ -12,71 +12,71 @@ export const areas: PracticeArea[] = [
     title: "Derecho laboral",
     featured: true,
     summary:
-      "Nuestra área de mayor tradición. Asesoramos tanto a trabajadores como a empleadores, con una mirada equilibrada y técnica, enfocada en dar certeza jurídica a cada relación de trabajo.",
+      "Nuestra especialidad. Asesoría equilibrada a trabajadores y empleadores.",
     bullets: [
-      "Término de contrato, despidos y tutela de derechos fundamentales",
-      "Negociación colectiva y asesoría a organizaciones sindicales",
-      "Accidentes del trabajo y enfermedades profesionales",
-      "Auditorías de cumplimiento y reglamentos internos",
-      "Representación ante la Dirección del Trabajo y Juzgados Laborales",
-      "Subcontratación, suministro y regímenes especiales",
+      "Despidos y tutela laboral",
+      "Negociación colectiva",
+      "Accidentes del trabajo",
+      "Auditorías de cumplimiento",
+      "Representación ante tribunales",
+      "Subcontratación y regímenes especiales",
     ],
   },
   {
     slug: "derecho-civil",
     title: "Derecho civil",
     summary:
-      "Asesoría a personas naturales y jurídicas en materias contractuales, responsabilidad civil y derechos reales, con un enfoque preventivo y orientado a evitar la litigación.",
+      "Contratos, responsabilidad civil y asuntos inmobiliarios con enfoque preventivo.",
     bullets: [
       "Redacción y revisión de contratos",
-      "Responsabilidad civil contractual y extracontractual",
-      "Obligaciones, cobranzas y cumplimiento forzado",
-      "Asuntos inmobiliarios y derechos reales",
+      "Responsabilidad civil",
+      "Cobranzas y cumplimiento forzado",
+      "Derechos reales e inmobiliarios",
     ],
   },
   {
     slug: "derecho-de-familia",
     title: "Derecho de familia",
     summary:
-      "Acompañamiento en procesos sensibles, con discreción y estándares profesionales altos. Priorizamos siempre acuerdos cuando ello resulta posible.",
+      "Divorcios, cuidado personal y alimentos. Priorizamos acuerdos cuando es posible.",
     bullets: [
-      "Divorcios, compensación económica y regímenes matrimoniales",
-      "Cuidado personal, relación directa y alimentos",
-      "Mediaciones y acuerdos extrajudiciales",
+      "Divorcios y compensación económica",
+      "Cuidado personal y alimentos",
+      "Mediaciones y acuerdos",
     ],
   },
   {
     slug: "derecho-corporativo",
     title: "Derecho corporativo",
     summary:
-      "Asesoría permanente a empresas en la organización de su actividad, contratos comerciales, gobierno interno y cumplimiento normativo.",
+      "Asesoría permanente a empresas en organización, contratos y cumplimiento normativo.",
     bullets: [
       "Constitución y reorganización societaria",
-      "Contratos mercantiles y operaciones habituales",
+      "Contratos mercantiles",
       "Gobierno corporativo y compliance",
-      "Due diligence y operaciones de M&A",
+      "Due diligence y M&A",
     ],
   },
   {
     slug: "litigacion",
     title: "Litigación",
     summary:
-      "Representación ante tribunales ordinarios, laborales y de familia en la Región del Biobío, con estrategia procesal clara y comunicación permanente con el cliente.",
+      "Representación ante tribunales ordinarios, laborales y de familia en el Biobío.",
     bullets: [
       "Procedimientos ordinarios y especiales",
-      "Recursos ante Cortes de Apelaciones y Corte Suprema",
-      "Ejecución de sentencias y cumplimiento",
+      "Recursos ante Cortes de Apelaciones",
+      "Ejecución de sentencias",
     ],
   },
   {
     slug: "administrativo",
     title: "Derecho administrativo",
     summary:
-      "Relación con organismos públicos, procedimientos sancionatorios y defensa de derechos frente a la Administración del Estado.",
+      "Defensa ante la Administración del Estado y procedimientos sancionatorios.",
     bullets: [
-      "Reclamos administrativos y recursos jerárquicos",
-      "Procedimientos sancionatorios y multas",
-      "Contratación pública y licitaciones",
+      "Reclamos y recursos administrativos",
+      "Procedimientos sancionatorios",
+      "Contratación pública",
     ],
   },
 ];
