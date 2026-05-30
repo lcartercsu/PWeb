@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { SectionHeader } from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Estudio",
@@ -34,82 +33,65 @@ export default function EstudioPage() {
     <>
       <PageHero
         eyebrow="El estudio"
-        title={
-          <>
-            Un estudio jurídico en Concepción, con una tradición de trabajo{" "}
-            <span className="italic text-gold">serio y continuo</span>.
-          </>
-        }
-        lead={
-          <>
-            García Neiman y Asociados nació y se mantiene en Concepción.
-            Durante casi tres décadas hemos acompañado a personas, familias y
-            empresas de la Región del Biobío y del sur de Chile en materias
-            jurídicas de diversa complejidad.
-          </>
-        }
+        title="Un estudio jurídico en Concepción con una tradición de trabajo serio y continuo."
+        lead="García Neiman y Asociados nació y se mantiene en Concepción. Durante casi tres décadas hemos acompañado a personas, familias y empresas de la Región del Biobío en materias jurídicas de diversa complejidad."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Estudio" }]}
       />
 
       {/* NARRATIVA */}
-      <section className="bg-bone py-24 md:py-32">
-        <Container className="grid gap-16 md:grid-cols-[1fr_1.4fr] md:gap-24">
-          <SectionHeader
-            eyebrow="Quiénes somos"
-            title={
-              <>
-                Una práctica construida desde la <em>experiencia laboral</em>,
-                abierta a la asesoría integral.
-              </>
-            }
-          />
-          <div className="space-y-6 text-pretty text-lg leading-relaxed text-ink-muted">
+      <section className="bg-white py-20 md:py-28">
+        <Container className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-24">
+          <div>
+            <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+              Quiénes somos
+            </span>
+            <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
+              Una práctica construida desde la experiencia laboral.
+            </h2>
+          </div>
+          <div className="space-y-5 text-[16px] leading-relaxed text-[#6e6e73]">
             <p>
               Bajo la dirección de Rodrigo García Neiman, el estudio se ha
               consolidado como una firma de referencia regional en derecho
-              laboral. A partir de esa base hemos extendido nuestro ejercicio a
-              las áreas civil, de familia, corporativa y administrativa, que
-              resultan naturalmente conexas con el trabajo que realizamos para
-              clientes individuales y empresas.
+              laboral. A partir de esa base hemos extendido nuestro ejercicio
+              a las áreas civil, de familia, corporativa y administrativa.
             </p>
             <p>
               Somos un equipo pequeño y por diseño. Creemos que la calidad del
-              trabajo jurídico depende de la dedicación personal de los
-              abogados a cada asunto, y no de la escala del estudio. Por ello
-              mantenemos una cartera acotada de clientes y privilegiamos
-              relaciones de largo plazo.
+              trabajo jurídico depende de la dedicación personal de los abogados
+              a cada asunto. Mantenemos una cartera acotada de clientes y
+              privilegiamos relaciones de largo plazo.
             </p>
             <p>
               Nuestra oficina se encuentra en el centro de Concepción y desde
-              ahí atendemos causas en toda la Región del Biobío y en otras
-              regiones del país cuando el asunto así lo requiere.
+              ahí atendemos causas en toda la Región del Biobío.
             </p>
           </div>
         </Container>
       </section>
 
       {/* PRINCIPIOS */}
-      <section className="border-t border-ink/10 bg-bone-warm/40 py-24 md:py-32">
+      <section className="bg-[#f5f5f7] py-20 md:py-28">
         <Container>
-          <SectionHeader
-            eyebrow="Principios de trabajo"
-            title="Cuatro criterios que orientan nuestra práctica."
-          />
-          <div className="mt-16 grid gap-px bg-ink/10 md:grid-cols-2">
+          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+            Principios de trabajo
+          </span>
+          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
+            Cuatro criterios que orientan nuestra práctica.
+          </h2>
+          <div className="mt-12 grid gap-[1px] bg-[#d2d2d7]/50 md:grid-cols-2">
             {principles.map((p, i) => (
               <div
                 key={p.title}
-                className="flex flex-col gap-4 bg-bone p-8 md:p-12"
+                className="flex flex-col gap-4 bg-[#f5f5f7] p-8 md:p-10"
               >
-                <div className="flex items-baseline justify-between">
-                  <span className="font-serif text-sm text-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-ink md:text-3xl">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-[24px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
                   {p.title}
                 </h3>
-                <p className="text-base leading-relaxed text-ink-muted">
+                <p className="text-[15px] leading-relaxed text-[#6e6e73]">
                   {p.body}
                 </p>
               </div>
@@ -119,20 +101,20 @@ export default function EstudioPage() {
       </section>
 
       {/* CIFRAS */}
-      <section className="bg-bone py-24 md:py-32">
+      <section className="bg-white py-20 md:py-28">
         <Container>
-          <div className="grid gap-12 border-t border-ink/10 pt-12 md:grid-cols-4">
+          <div className="grid gap-10 border-t border-[#d2d2d7]/60 pt-12 sm:grid-cols-2 md:grid-cols-4">
             {[
-              { k: "~30", v: "Años de ejercicio profesional" },
+              { k: "~30", v: "Años de ejercicio" },
               { k: "4", v: "Abogados integrados" },
               { k: "1", v: "Oficina en Concepción" },
               { k: "Biobío", v: "y sur de Chile" },
             ].map((item) => (
               <div key={item.v}>
-                <p className="font-serif text-5xl tracking-tight text-ink md:text-6xl">
+                <p className="font-serif text-[52px] font-medium leading-none tracking-tight text-[#1d1d1f]">
                   {item.k}
                 </p>
-                <p className="mt-3 text-sm uppercase tracking-eyebrow text-ink-muted">
+                <p className="mt-3 text-[12px] uppercase tracking-[0.16em] text-[#86868b]">
                   {item.v}
                 </p>
               </div>
@@ -142,17 +124,13 @@ export default function EstudioPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-ink text-bone">
+      <section className="bg-[#1d1d1f]">
         <Container className="flex flex-col items-start gap-8 py-20 md:flex-row md:items-center md:justify-between md:py-24">
-          <h2 className="max-w-2xl font-serif text-3xl leading-tight tracking-tight md:text-4xl">
+          <h2 className="max-w-xl font-serif text-[32px] font-medium leading-tight tracking-tight text-white md:text-[40px]">
             Conozca a las personas que conforman el estudio.
           </h2>
-          <Link
-            href="/equipo"
-            className="inline-flex items-center gap-3 border border-bone/40 px-6 py-4 text-xs uppercase tracking-eyebrow text-bone transition-colors hover:border-bone"
-          >
-            Ir al equipo
-            <span aria-hidden>→</span>
+          <Link href="/equipo" className="btn-primary bg-white text-[#1d1d1f] hover:bg-white/85 shrink-0">
+            Ir al equipo →
           </Link>
         </Container>
       </section>

@@ -18,40 +18,28 @@ export default function EquipoPage() {
     <>
       <PageHero
         eyebrow="Equipo"
-        title={
-          <>
-            Cuatro abogados integrados bajo un mismo{" "}
-            <span className="italic text-gold">criterio de trabajo</span>.
-          </>
-        }
-        lead={
-          <>
-            El estudio es dirigido por Rodrigo García Neiman y cuenta con un
-            equipo de abogados y abogadas asociadas que participan directamente
-            en el estudio y defensa de los asuntos que nos son encomendados.
-          </>
-        }
+        title="Cuatro abogados integrados bajo un mismo criterio de trabajo."
+        lead="El estudio es dirigido por Rodrigo García Neiman y cuenta con un equipo de abogados y abogadas que participan directamente en el estudio y defensa de los asuntos encomendados."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Equipo" }]}
       />
 
       {/* SOCIO PRINCIPAL */}
-      <section className="bg-bone py-24 md:py-28">
+      <section className="bg-white py-20 md:py-28">
         <Container>
           <TeamCard member={lead} variant="lead" />
         </Container>
       </section>
 
       {/* ASOCIADOS */}
-      <section className="border-t border-ink/10 bg-bone-warm/40 py-24 md:py-28">
+      <section className="bg-[#f5f5f7] py-20 md:py-28">
         <Container>
-          <div className="flex items-center gap-3">
-            <span className="rule" aria-hidden />
-            <span className="eyebrow">Asociados</span>
-          </div>
-          <h2 className="mt-6 max-w-3xl font-serif text-3xl leading-tight tracking-tight md:text-[2.75rem]">
+          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+            Asociados
+          </span>
+          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
             Abogados y abogadas asociadas del estudio.
           </h2>
-          <div className="mt-16 grid gap-12 md:grid-cols-3">
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
             {associates.map((member) => (
               <TeamCard key={member.slug} member={member} />
             ))}

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
-import { Container } from "./Container";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -11,45 +10,43 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, lead, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-ink/10 bg-bone-warm">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(ellipse_at_top_right,_rgba(138,109,59,0.12),transparent_70%)] md:block"
-      />
-      <Container className="relative py-20 md:py-28">
+    <section className="border-b border-[#d2d2d7]/50 bg-white pt-[80px]">
+      <div className="mx-auto w-full max-w-[1180px] px-6 py-16 md:px-10 md:py-24">
         {breadcrumb && (
-          <nav aria-label="Ruta" className="mb-8 text-xs text-ink-muted">
+          <nav aria-label="Ruta" className="mb-8 text-[12px] text-[#86868b]">
             <ol className="flex flex-wrap items-center gap-2">
               {breadcrumb.map((crumb, i) => (
                 <li key={i} className="flex items-center gap-2">
                   {crumb.href ? (
-                    <Link href={crumb.href} className="link-underline">
+                    <Link href={crumb.href} className="hover:text-[#1d1d1f] transition-colors">
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className="text-ink">{crumb.label}</span>
+                    <span className="text-[#1d1d1f]">{crumb.label}</span>
                   )}
                   {i < breadcrumb.length - 1 && (
-                    <span className="text-ink/30">/</span>
+                    <span className="text-[#d2d2d7]">/</span>
                   )}
                 </li>
               ))}
             </ol>
           </nav>
         )}
-        <div className="flex items-center gap-3">
-          <span className="rule" aria-hidden />
-          <span className="eyebrow">{eyebrow}</span>
-        </div>
-        <h1 className="mt-6 max-w-4xl text-balance font-serif text-4xl leading-[1.05] tracking-tight text-ink md:text-[3.5rem]">
+
+        <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+          {eyebrow}
+        </span>
+
+        <h1 className="mt-4 max-w-3xl font-serif text-[40px] font-medium leading-[1.06] tracking-tight text-[#1d1d1f] md:text-[56px]">
           {title}
         </h1>
+
         {lead && (
-          <div className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted">
+          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-[#6e6e73]">
             {lead}
-          </div>
+          </p>
         )}
-      </Container>
+      </div>
     </section>
   );
 }

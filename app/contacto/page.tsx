@@ -14,89 +14,73 @@ export default function ContactoPage() {
     <>
       <PageHero
         eyebrow="Contacto"
-        title={
-          <>
-            Evaluamos su caso con reserva y sin{" "}
-            <span className="italic text-gold">compromiso inicial</span>.
-          </>
-        }
-        lead={
-          <>
-            Si desea conversar con nosotros, puede escribirnos, llamarnos o
-            visitar la oficina en el centro de Concepción. Responderemos dentro
-            del siguiente día hábil.
-          </>
-        }
+        title="Evaluamos su caso con reserva y sin compromiso inicial."
+        lead="Si desea conversar con nosotros, puede escribirnos, llamarnos o visitar la oficina en el centro de Concepción. Responderemos dentro del siguiente día hábil."
         breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Contacto" }]}
       />
 
-      <section className="bg-bone py-24 md:py-28">
+      <section className="bg-white py-20 md:py-28">
         <Container className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-20">
-          {/* INFORMACIÓN DE CONTACTO */}
+          {/* INFORMACIÓN */}
           <div className="flex flex-col gap-10">
             <div>
-              <p className="eyebrow">Oficina</p>
-              <p className="mt-3 font-serif text-2xl leading-tight tracking-tight text-ink md:text-3xl">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Oficina</p>
+              <p className="mt-3 font-serif text-[28px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
                 {site.contact.address}
               </p>
-              <p className="mt-1 text-base text-ink-muted">
-                {site.contact.city}
-              </p>
+              <p className="mt-1 text-[16px] text-[#6e6e73]">{site.contact.city}</p>
             </div>
 
-            <div className="grid gap-8 border-t border-ink/10 pt-10 sm:grid-cols-2">
+            <div className="grid gap-8 border-t border-[#d2d2d7]/60 pt-8 sm:grid-cols-2">
               <div>
-                <p className="eyebrow">Teléfono</p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Teléfono</p>
                 <a
                   href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-                  className="mt-3 block font-serif text-xl text-ink"
+                  className="mt-3 block font-serif text-[22px] font-medium text-[#1d1d1f] hover:text-[#6e6e73]"
                 >
                   {site.contact.phone}
                 </a>
               </div>
               <div>
-                <p className="eyebrow">Correo electrónico</p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Correo</p>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="mt-3 block font-serif text-xl text-ink"
+                  className="mt-3 block font-serif text-[18px] font-medium text-[#1d1d1f] hover:text-[#6e6e73] break-all"
                 >
                   {site.contact.email}
                 </a>
               </div>
               <div>
-                <p className="eyebrow">Horario de atención</p>
-                <p className="mt-3 text-base text-ink">
-                  {site.contact.hours}
-                </p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-gold">Horario</p>
+                <p className="mt-3 text-[15px] text-[#6e6e73]">{site.contact.hours}</p>
               </div>
             </div>
 
-            <div className="border-t border-ink/10 pt-10">
-              <p className="eyebrow">Reserva y confidencialidad</p>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-muted">
-                Toda consulta que nos haga llegar será tratada con estricta
-                confidencialidad. Nuestra respuesta inicial no implica aún la
-                aceptación del encargo ni la constitución formal de una
-                relación profesional.
+            <div className="border-t border-[#d2d2d7]/60 pt-8">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                Reserva y confidencialidad
+              </p>
+              <p className="mt-4 text-[14px] leading-relaxed text-[#6e6e73]">
+                Toda consulta será tratada con estricta confidencialidad.
+                Nuestra respuesta inicial no implica la aceptación del encargo
+                ni la constitución formal de una relación profesional.
               </p>
             </div>
           </div>
 
           {/* FORMULARIO */}
-          <div className="border-t border-ink/10 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
-            <p className="eyebrow">Enviar consulta</p>
-            <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight md:text-4xl">
-              Cuéntenos brevemente su caso.
+          <div className="border-t border-[#d2d2d7]/60 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+              Enviar consulta
+            </span>
+            <h2 className="mt-4 font-serif text-[32px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+              Cuéntenos su caso.
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-              Complete el siguiente formulario. Campos marcados con * son
-              obligatorios.
-            </p>
 
             <form
               method="post"
               action="#"
-              className="mt-10 grid gap-6"
+              className="mt-8 grid gap-6"
               aria-label="Formulario de contacto"
             >
               <Field label="Nombre completo *" name="nombre" required />
@@ -106,41 +90,34 @@ export default function ContactoPage() {
               </div>
               <Field label="Materia de la consulta" name="materia" />
               <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="mensaje"
-                  className="eyebrow text-ink"
-                >
+                <label htmlFor="mensaje" className="text-[11px] uppercase tracking-[0.22em] text-gold">
                   Mensaje *
                 </label>
                 <textarea
                   id="mensaje"
                   name="mensaje"
                   required
-                  rows={6}
-                  className="border-b border-ink/30 bg-transparent py-3 text-base text-ink outline-none transition-colors focus:border-ink"
+                  rows={5}
+                  className="border-b border-[#d2d2d7] bg-transparent py-3 text-[15px] text-[#1d1d1f] outline-none transition-colors focus:border-[#1d1d1f] placeholder:text-[#86868b]"
                 />
               </div>
 
-              <label className="flex items-start gap-3 pt-2 text-xs leading-relaxed text-ink-muted">
+              <label className="flex items-start gap-3 pt-1 text-[13px] leading-relaxed text-[#6e6e73]">
                 <input
                   type="checkbox"
                   name="privacidad"
                   required
-                  className="mt-[0.2rem] h-4 w-4 shrink-0 accent-ink"
+                  className="mt-[2px] h-4 w-4 shrink-0 accent-[#1d1d1f]"
                 />
                 <span>
-                  Acepto que los datos entregados serán utilizados
-                  exclusivamente para dar respuesta a esta consulta. *
+                  Acepto que los datos entregados se utilizarán exclusivamente
+                  para dar respuesta a esta consulta. *
                 </span>
               </label>
 
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-3 bg-ink px-6 py-4 text-xs uppercase tracking-eyebrow text-bone transition-colors hover:bg-ink-soft"
-                >
+              <div className="pt-2">
+                <button type="submit" className="btn-primary">
                   Enviar consulta
-                  <span aria-hidden>→</span>
                 </button>
               </div>
             </form>
@@ -149,21 +126,24 @@ export default function ContactoPage() {
       </section>
 
       {/* MAPA */}
-      <section className="border-t border-ink/10 bg-bone-warm/40 py-16">
+      <section className="bg-[#f5f5f7] py-16">
         <Container>
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow">Ubicación</p>
-              <h3 className="mt-3 font-serif text-2xl leading-tight tracking-tight md:text-3xl">
+              <span className="text-[11px] uppercase tracking-[0.22em] text-gold">Ubicación</span>
+              <h3 className="mt-3 font-serif text-[28px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
                 Centro de Concepción
               </h3>
             </div>
-            <p className="max-w-md text-sm text-ink-muted">
+            <p className="max-w-sm text-[14px] text-[#6e6e73]">
               A pocos minutos caminando de los Tribunales de Justicia de
-              Concepción y con acceso a estacionamientos en las inmediaciones.
+              Concepción, con estacionamientos en las inmediaciones.
             </p>
           </div>
-          <div className="mt-10 overflow-hidden border border-ink/10" style={{ aspectRatio: "16/7" }}>
+          <div
+            className="overflow-hidden border border-[#d2d2d7]/60"
+            style={{ aspectRatio: "16/7" }}
+          >
             <iframe
               title="Ubicación García Neiman y Asociados"
               src="https://maps.google.com/maps?q=Colo-Colo+379,+Concepci%C3%B3n,+Chile&t=&z=17&ie=UTF8&iwloc=&output=embed"
@@ -194,7 +174,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={name} className="eyebrow text-ink">
+      <label htmlFor={name} className="text-[11px] uppercase tracking-[0.22em] text-gold">
         {label}
       </label>
       <input
@@ -202,7 +182,7 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="border-b border-ink/30 bg-transparent py-3 text-base text-ink outline-none transition-colors focus:border-ink"
+        className="border-b border-[#d2d2d7] bg-transparent py-3 text-[15px] text-[#1d1d1f] outline-none transition-colors focus:border-[#1d1d1f]"
       />
     </div>
   );

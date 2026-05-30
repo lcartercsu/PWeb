@@ -11,7 +11,8 @@
       "mcp__af99d3f8-6118-46b4-8731-60101d5fecb0__deploy_to_vercel",
       "Bash(vercel --version)",
       "Bash(npx vercel:*)",
-      "Bash(curl -sI https://garcianeiman.vercel.app)"
+      "Bash(curl -sI https://garcianeiman.vercel.app)",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\PWeb\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"npm run dev\" -WindowStyle Normal)"
     ]
   }
 }

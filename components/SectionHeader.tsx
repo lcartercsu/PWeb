@@ -19,24 +19,19 @@ export function SectionHeader({
     align === "center" ? "items-center text-center" : "items-start text-left";
 
   return (
-    <div className={`flex flex-col gap-5 ${alignment} ${className}`}>
+    <div className={`flex flex-col gap-4 ${alignment} ${className}`}>
       {eyebrow && (
-        <div
-          className={`flex items-center gap-3 ${
-            align === "center" ? "justify-center" : ""
-          }`}
-        >
-          <span className="rule" aria-hidden />
-          <span className="eyebrow">{eyebrow}</span>
-        </div>
+        <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+          {eyebrow}
+        </span>
       )}
-      <h2 className="max-w-3xl text-balance font-serif text-3xl leading-[1.1] tracking-tight text-ink md:text-[2.75rem]">
+      <h2 className="max-w-2xl font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
         {title}
       </h2>
       {description && (
-        <div className="max-w-prose text-pretty text-base leading-relaxed text-ink-muted md:text-lg">
+        <p className="max-w-prose text-[16px] leading-relaxed text-[#6e6e73] md:text-[17px]">
           {description}
-        </div>
+        </p>
       )}
     </div>
   );

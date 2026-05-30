@@ -10,36 +10,36 @@
   }
 
   body {
-    @apply bg-bone text-ink font-sans;
-    font-feature-settings: "ss01", "ss02", "cv11";
-  }
-
-  ::selection {
-    background: rgba(138, 109, 59, 0.18);
-    color: #111418;
+    @apply bg-white text-[#1d1d1f] font-sans;
   }
 
   h1, h2, h3, h4 {
-    @apply font-serif text-ink;
+    @apply font-serif;
     font-feature-settings: "liga", "dlig";
   }
 
   a {
     @apply transition-colors duration-200;
   }
+
+  ::selection {
+    background: rgba(138, 109, 59, 0.15);
+    color: #1d1d1f;
+  }
 }
 
 @layer components {
+  /* Legacy classes kept for subpages */
   .eyebrow {
-    @apply text-eyebrow uppercase font-sans font-medium text-gold tracking-eyebrow;
+    @apply text-[11px] uppercase font-sans font-medium text-gold tracking-badge;
   }
 
   .rule {
-    @apply h-px w-12 bg-gold-line;
+    @apply h-px w-10 bg-gold/40;
   }
 
   .rule-soft {
-    @apply h-px w-full bg-ink/10;
+    @apply h-px w-full bg-[#d2d2d7]/60;
   }
 
   .link-underline {
@@ -52,5 +52,37 @@
 
   .link-underline:hover {
     background-size: 100% 1px;
+  }
+
+  /* Apple-style pill button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[#1d1d1f] px-7 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#353535];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-[#1d1d1f]/20 px-7 py-3 text-[15px] font-medium text-[#1d1d1f] transition-colors hover:border-[#1d1d1f]/50;
+  }
+}
+
+@layer utilities {
+  .fade-up {
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.35s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

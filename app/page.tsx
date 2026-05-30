@@ -1,277 +1,271 @@
 import Link from "next/link";
-import { Container } from "@/components/Container";
-import { SectionHeader } from "@/components/SectionHeader";
 import { areas } from "@/lib/areas";
 import { team } from "@/lib/team";
+import { site } from "@/lib/site";
 
 export default function HomePage() {
   const lead = team.find((t) => t.lead)!;
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-bone">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(138,109,59,0.10),transparent_60%)]"
-        />
-        <Container className="relative grid gap-16 py-20 md:grid-cols-[1.3fr_1fr] md:items-end md:py-32">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="rule" aria-hidden />
-              <span className="eyebrow">Concepción · desde 1996</span>
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section className="bg-white pt-[110px] pb-24 md:pt-[130px] md:pb-32">
+        <div className="mx-auto max-w-[1200px] px-6 text-center">
+          <span className="fade-up inline-block text-[11px] uppercase tracking-[0.22em] text-gold">
+            Concepción · Desde 1996
+          </span>
+
+          <h1 className="fade-up delay-1 mt-5 font-serif text-[52px] font-medium leading-[1.06] tracking-tight text-[#1d1d1f] md:text-7xl lg:text-[88px]">
+            Asesoría jurídica<br />
+            con criterio<br />
+            y experiencia.
+          </h1>
+
+          <p className="fade-up delay-2 mx-auto mt-7 max-w-[540px] text-[18px] leading-relaxed text-[#6e6e73] md:text-[20px]">
+            García Neiman y Asociados. Especialistas en derecho laboral
+            para personas y empresas en la Región del Biobío.
+          </p>
+
+          <div className="fade-up delay-3 mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link href="/contacto" className="btn-primary">
+              Agendar consulta
+            </Link>
+            <Link href="/areas" className="btn-ghost">
+              Áreas de práctica
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STATS ────────────────────────────────────────────────── */}
+      <section className="bg-[#f5f5f7]">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 divide-y divide-[#d2d2d7]/50 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {[
+            { value: "~30", label: "Años de trayectoria" },
+            { value: "4", label: "Abogados especializados" },
+            { value: "Laboral", label: "Área de especialidad principal" },
+          ].map(({ value, label }) => (
+            <div key={label} className="py-12 text-center">
+              <p className="font-serif text-[52px] font-medium leading-none tracking-tight text-[#1d1d1f]">
+                {value}
+              </p>
+              <p className="mt-3 text-[12px] uppercase tracking-[0.16em] text-[#86868b]">
+                {label}
+              </p>
             </div>
-            <h1 className="mt-8 max-w-4xl text-balance font-serif text-5xl leading-[1.02] tracking-tight text-ink md:text-7xl">
-              Asesoría jurídica con criterio, discreción y una trayectoria de
-              tres décadas.
-            </h1>
-            <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-ink-muted md:text-xl">
-              García Neiman y Asociados es un estudio jurídico con foco en
-              derecho laboral, que acompaña de forma equilibrada a personas y
-              empresas en Concepción.
-            </p>
-            <div className="mt-12 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center gap-3 bg-ink px-6 py-4 text-xs uppercase tracking-eyebrow text-bone transition-colors hover:bg-ink-soft"
-              >
-                Agendar primera reunión
-                <span aria-hidden>→</span>
-              </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── ESTUDIO ──────────────────────────────────────────────── */}
+      <section className="bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <div className="grid gap-16 md:grid-cols-2 md:items-center md:gap-28">
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                El estudio
+              </span>
+              <h2 className="mt-4 font-serif text-[40px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-5xl">
+                Tres décadas de<br />ejercicio continuo<br />en Concepción.
+              </h2>
+            </div>
+            <div className="space-y-5 text-[17px] leading-relaxed text-[#6e6e73]">
+              <p>
+                Fundado en Concepción, nuestro estudio ha construido su
+                reputación sobre relaciones profesionales de largo plazo.
+                Atendemos a clientes individuales y organizaciones empresariales
+                buscando siempre soluciones técnicamente sólidas.
+              </p>
+              <p>
+                Nuestra práctica está centrada en el derecho del trabajo, área
+                en la que hemos intervenido tanto defendiendo a trabajadores
+                como asesorando a empleadores, con una comprensión completa del
+                conflicto laboral.
+              </p>
               <Link
                 href="/estudio"
-                className="inline-flex items-center gap-3 border border-ink/20 px-6 py-4 text-xs uppercase tracking-eyebrow text-ink transition-colors hover:border-ink"
+                className="mt-1 inline-flex items-center gap-1.5 text-[15px] text-[#1d1d1f] hover:text-[#6e6e73]"
               >
-                Conocer el estudio
+                Conocer el estudio <span aria-hidden>→</span>
               </Link>
             </div>
           </div>
-
-          <aside className="md:pl-10 md:border-l md:border-ink/10">
-            <dl className="grid grid-cols-2 gap-8 md:grid-cols-1">
-              <div>
-                <dt className="eyebrow">Trayectoria</dt>
-                <dd className="mt-3 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-                  ~30<span className="text-gold"> años</span>
-                </dd>
-                <p className="mt-2 text-sm text-ink-muted">
-                  de ejercicio profesional continuo.
-                </p>
-              </div>
-              <div>
-                <dt className="eyebrow">Equipo</dt>
-                <dd className="mt-3 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-                  4 <span className="text-gold">abogados</span>
-                </dd>
-                <p className="mt-2 text-sm text-ink-muted">
-                  integrados bajo un único criterio de trabajo.
-                </p>
-              </div>
-              <div>
-                <dt className="eyebrow">Foco</dt>
-                <dd className="mt-3 font-serif text-2xl leading-tight tracking-tight text-ink">
-                  Derecho laboral
-                </dd>
-                <p className="mt-2 text-sm text-ink-muted">
-                  con asesoría integral y mirada equilibrada.
-                </p>
-              </div>
-            </dl>
-          </aside>
-        </Container>
+        </div>
       </section>
 
-      {/* PRESENTACIÓN */}
-      <section className="bg-bone py-24 md:py-32">
-        <Container className="grid gap-16 md:grid-cols-[1fr_1.4fr] md:gap-24">
-          <SectionHeader
-            eyebrow="El estudio"
-            title={
-              <>
-                Un estudio en Concepción con vocación de{" "}
-                <span className="italic text-gold">permanencia</span>.
-              </>
-            }
-          />
-          <div className="space-y-6 text-pretty text-lg leading-relaxed text-ink-muted">
-            <p>
-              Fundado en Concepción, nuestro estudio ha construido su
-              reputación sobre la base de relaciones profesionales de largo
-              plazo. Atendemos a clientes individuales y a organizaciones
-              empresariales de distinta escala, buscando siempre soluciones
-              técnicamente sólidas y proporcionadas al asunto concreto.
-            </p>
-            <p>
-              Nuestra práctica está centrada en el derecho del trabajo, área en
-              la que hemos intervenido tanto defendiendo a trabajadores como
-              asesorando a empleadores, lo que nos otorga una comprensión
-              completa del conflicto laboral y una mejor capacidad de
-              prevención.
-            </p>
-            <div className="pt-4">
-              <Link
-                href="/estudio"
-                className="inline-flex items-center gap-2 text-sm uppercase tracking-eyebrow text-ink"
-              >
-                <span className="link-underline">Leer más sobre el estudio</span>
-                <span aria-hidden>→</span>
-              </Link>
+      {/* ── ÁREAS ────────────────────────────────────────────────── */}
+      <section className="bg-[#f5f5f7] py-28 md:py-36">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                Áreas de práctica
+              </span>
+              <h2 className="mt-4 font-serif text-[40px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-5xl">
+                Experiencia concentrada,<br />mirada transversal.
+              </h2>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ÁREAS DESTACADAS */}
-      <section className="border-t border-ink/10 bg-bone-warm/40 py-24 md:py-32">
-        <Container>
-          <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
-            <SectionHeader
-              eyebrow="Áreas de práctica"
-              title="Experiencia concentrada, mirada transversal."
-              description="Nuestro equipo concentra su trabajo en el derecho laboral, complementado con áreas de práctica habituales del asesoramiento integral a personas y empresas."
-            />
             <Link
               href="/areas"
-              className="inline-flex shrink-0 items-center gap-2 text-sm uppercase tracking-eyebrow text-ink"
+              className="shrink-0 text-[15px] text-[#1d1d1f] hover:text-[#6e6e73]"
             >
-              <span className="link-underline">Ver todas las áreas</span>
-              <span aria-hidden>→</span>
+              Ver todas →
             </Link>
           </div>
 
-          <div className="mt-16 grid gap-px bg-ink/10 md:grid-cols-3">
+          <div className="grid gap-[1px] bg-[#d2d2d7]/50 sm:grid-cols-2 md:grid-cols-3">
             {areas.slice(0, 6).map((area, i) => (
               <Link
                 key={area.slug}
                 href="/areas"
-                className="group flex flex-col gap-4 bg-bone p-8 transition-colors hover:bg-bone-warm md:p-10"
+                className="group flex flex-col gap-5 bg-[#f5f5f7] p-8 transition-colors duration-200 hover:bg-white md:p-10"
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-sm text-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  {area.featured && (
-                    <span className="eyebrow text-gold">Principal</span>
-                  )}
-                </div>
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-ink">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-[22px] font-medium leading-snug tracking-tight text-[#1d1d1f]">
                   {area.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-ink-muted">
+                <p className="text-[14px] leading-relaxed text-[#6e6e73]">
                   {area.summary}
                 </p>
                 <span
                   aria-hidden
-                  className="mt-auto inline-block text-xs uppercase tracking-eyebrow text-ink/60 transition-colors group-hover:text-ink"
+                  className="mt-auto text-[13px] text-[#86868b] transition-colors group-hover:text-[#1d1d1f]"
                 >
                   Ver detalle →
                 </span>
               </Link>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* SOCIO PRINCIPAL */}
-      <section className="bg-bone py-24 md:py-32">
-        <Container className="grid gap-14 md:grid-cols-[1fr_1.3fr] md:gap-20">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="rule" aria-hidden />
-              <span className="eyebrow">Socio principal</span>
-            </div>
-            <h2 className="mt-6 font-serif text-4xl leading-tight tracking-tight md:text-5xl">
-              {lead.name}
-            </h2>
-            <p className="mt-3 text-sm uppercase tracking-eyebrow text-ink-muted">
-              {lead.role}
-            </p>
-            <div
-              aria-hidden
-              className="relative mt-10 aspect-[4/5] w-full max-w-sm overflow-hidden bg-bone-deep"
-            >
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(138,109,59,0.12),_rgba(17,20,24,0.08))]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-serif text-7xl tracking-tight text-ink/35">
-                  {lead.initials}
-                </span>
-              </div>
-              <div className="absolute left-4 top-4 h-px w-10 bg-gold" />
-              <div className="absolute bottom-4 right-4 h-10 w-px bg-gold" />
-            </div>
-          </div>
-          <div className="flex flex-col gap-8">
-            <p className="text-pretty text-lg leading-relaxed text-ink md:text-xl">
-              {lead.bio}
-            </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <p className="eyebrow">Líneas de trabajo</p>
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-muted">
-                  {lead.focus.map((f) => (
-                    <li key={f} className="flex gap-3">
-                      <span
-                        aria-hidden
-                        className="mt-[0.55rem] inline-block h-px w-4 bg-gold"
-                      />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="eyebrow">Formación</p>
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-muted">
-                  {lead.education.map((e) => (
-                    <li key={e} className="flex gap-3">
-                      <span
-                        aria-hidden
-                        className="mt-[0.55rem] inline-block h-px w-4 bg-gold"
-                      />
-                      <span>{e}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+      {/* ── SOCIO ────────────────────────────────────────────────── */}
+      <section className="bg-white py-28 md:py-36">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <div className="grid gap-16 md:grid-cols-2 md:items-start md:gap-24">
             <div>
+              <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                Socio principal
+              </span>
+              <h2 className="mt-4 font-serif text-[40px] font-medium leading-tight tracking-tight text-[#1d1d1f]">
+                {lead.name}
+              </h2>
+              <p className="mt-2 text-[12px] uppercase tracking-[0.16em] text-[#86868b]">
+                {lead.role}
+              </p>
+              {/* Avatar placeholder */}
+              <div className="relative mt-10 aspect-[4/5] max-w-[280px] overflow-hidden bg-[#f5f5f7]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="font-serif text-[88px] font-medium tracking-tight text-[#d2d2d7]">
+                    {lead.initials}
+                  </span>
+                </div>
+                <div className="absolute left-4 top-4 h-px w-8 bg-gold/60" />
+                <div className="absolute bottom-4 right-4 h-8 w-px bg-gold/60" />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-8">
+              <p className="text-[17px] leading-relaxed text-[#6e6e73]">
+                {lead.bio}
+              </p>
+
+              <div className="grid gap-8 sm:grid-cols-2">
+                <div>
+                  <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
+                    Líneas de trabajo
+                  </p>
+                  <ul className="space-y-2.5">
+                    {lead.focus.map((f) => (
+                      <li
+                        key={f}
+                        className="flex gap-3 text-[14px] leading-snug text-[#6e6e73]"
+                      >
+                        <span
+                          aria-hidden
+                          className="mt-[6px] inline-block h-px w-3 shrink-0 bg-gold/70"
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
+                    Formación
+                  </p>
+                  <ul className="space-y-2.5">
+                    {lead.education.map((e) => (
+                      <li
+                        key={e}
+                        className="flex gap-3 text-[14px] leading-snug text-[#6e6e73]"
+                      >
+                        <span
+                          aria-hidden
+                          className="mt-[6px] inline-block h-px w-3 shrink-0 bg-gold/70"
+                        />
+                        {e}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
               <Link
                 href="/equipo"
-                className="inline-flex items-center gap-2 text-sm uppercase tracking-eyebrow text-ink"
+                className="text-[15px] text-[#1d1d1f] hover:text-[#6e6e73]"
               >
-                <span className="link-underline">Conocer al equipo</span>
-                <span aria-hidden>→</span>
+                Conocer al equipo →
               </Link>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
-      {/* CALL TO CONTACT */}
-      <section className="bg-ink text-bone">
-        <Container className="grid gap-10 py-20 md:grid-cols-[1.3fr_1fr] md:items-center md:py-28">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="h-px w-12 bg-gold-soft" aria-hidden />
-              <span className="eyebrow text-gold-soft">Contacto directo</span>
+      {/* ── CONTACTO CTA ─────────────────────────────────────────── */}
+      <section className="bg-[#1d1d1f] py-28 text-white md:py-32">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <div className="grid gap-14 md:grid-cols-2 md:items-center">
+            <div>
+              <h2 className="font-serif text-[40px] font-medium leading-tight tracking-tight md:text-5xl">
+                Evaluamos su caso<br />con reserva y sin<br />compromiso inicial.
+              </h2>
             </div>
-            <h2 className="mt-6 max-w-2xl font-serif text-4xl leading-tight tracking-tight md:text-5xl">
-              Evaluamos su caso con reserva y sin compromiso inicial.
-            </h2>
+
+            <div className="flex flex-col gap-5 md:items-end">
+              <dl className="space-y-2 text-[15px] text-white/60 md:text-right">
+                <dd>{site.contact.address}</dd>
+                <dd>{site.contact.city}</dd>
+                <dd className="text-white/40 text-[13px]">{site.contact.hours}</dd>
+                <dd>
+                  <a
+                    href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
+                    className="text-white hover:text-white/70 transition-colors"
+                  >
+                    {site.contact.phone}
+                  </a>
+                </dd>
+                <dd>
+                  <a
+                    href={`mailto:${site.contact.email}`}
+                    className="text-white hover:text-white/70 transition-colors"
+                  >
+                    {site.contact.email}
+                  </a>
+                </dd>
+              </dl>
+
+              <Link
+                href="/contacto"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[15px] font-medium text-[#1d1d1f] transition-colors hover:bg-white/85"
+              >
+                Escribir al estudio →
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 md:items-end">
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-3 bg-bone px-6 py-4 text-xs uppercase tracking-eyebrow text-ink transition-colors hover:bg-bone-warm"
-            >
-              Escribir al estudio
-              <span aria-hidden>→</span>
-            </Link>
-            <p className="text-sm text-bone/60">
-              Concepción · Región del Biobío · Chile
-            </p>
-          </div>
-        </Container>
+        </div>
       </section>
     </>
   );

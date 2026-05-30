@@ -19,21 +19,8 @@ export default function AreasPage() {
     <>
       <PageHero
         eyebrow="Áreas de práctica"
-        title={
-          <>
-            Con especialidad declarada en{" "}
-            <span className="italic text-gold">derecho laboral</span>, y una
-            asesoría transversal.
-          </>
-        }
-        lead={
-          <>
-            Nuestro trabajo se concentra en el derecho laboral, desde el cual
-            hemos desarrollado también una práctica habitual en asuntos
-            civiles, de familia, corporativos y administrativos. A continuación
-            describimos las materias en que intervenimos con regularidad.
-          </>
-        }
+        title="Especialidad en derecho laboral y asesoría transversal."
+        lead="Nuestro trabajo se concentra en el derecho laboral, desde el cual hemos desarrollado también una práctica habitual en asuntos civiles, de familia, corporativos y administrativos."
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Áreas de práctica" },
@@ -42,33 +29,31 @@ export default function AreasPage() {
 
       {/* ÁREA PRINCIPAL */}
       {featured && (
-        <section className="bg-bone py-24 md:py-28">
+        <section className="bg-white py-20 md:py-28">
           <Container>
-            <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-20">
+            <div className="grid gap-14 md:grid-cols-[1fr_1.4fr] md:gap-20">
               <div>
-                <div className="flex items-center gap-3">
-                  <span className="rule" aria-hidden />
-                  <span className="eyebrow">Área principal</span>
-                </div>
-                <h2 className="mt-6 font-serif text-4xl leading-[1.05] tracking-tight text-ink md:text-5xl">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+                  Área principal
+                </span>
+                <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
                   {featured.title}
                 </h2>
-                <p className="mt-6 text-pretty text-lg leading-relaxed text-ink-muted">
+                <p className="mt-5 text-[16px] leading-relaxed text-[#6e6e73]">
                   {featured.summary}
                 </p>
-                <Link
-                  href="/contacto"
-                  className="mt-10 inline-flex items-center gap-2 border border-ink px-5 py-3 text-xs uppercase tracking-eyebrow text-ink transition-colors hover:bg-ink hover:text-bone"
-                >
-                  Consultar sobre un caso laboral
+                <Link href="/contacto" className="btn-primary mt-8 text-[13px]">
+                  Consultar un caso laboral
                 </Link>
               </div>
 
-              <div className="border-t border-ink/10 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
+              <div className="border-t border-[#d2d2d7]/60 pt-10 md:border-l md:border-t-0 md:pl-14 md:pt-0">
                 <div className="grid gap-10 md:grid-cols-2">
                   <div>
-                    <p className="eyebrow">Para personas</p>
-                    <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-muted">
+                    <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
+                      Para personas
+                    </p>
+                    <ul className="space-y-2.5 text-[14px] leading-relaxed text-[#6e6e73]">
                       <li>Despidos y término del contrato de trabajo</li>
                       <li>Tutela laboral y derechos fundamentales</li>
                       <li>Accidentes del trabajo y enfermedades profesionales</li>
@@ -77,8 +62,10 @@ export default function AreasPage() {
                     </ul>
                   </div>
                   <div>
-                    <p className="eyebrow">Para empresas</p>
-                    <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-muted">
+                    <p className="mb-4 text-[11px] uppercase tracking-[0.22em] text-gold">
+                      Para empresas
+                    </p>
+                    <ul className="space-y-2.5 text-[14px] leading-relaxed text-[#6e6e73]">
                       <li>Auditorías y cumplimiento laboral</li>
                       <li>Reglamentos internos y políticas</li>
                       <li>Defensa ante la Dirección del Trabajo</li>
@@ -94,22 +81,17 @@ export default function AreasPage() {
       )}
 
       {/* RESTO DE ÁREAS */}
-      <section className="border-t border-ink/10 bg-bone-warm/40 py-24 md:py-28">
+      <section className="bg-[#f5f5f7] py-20 md:py-28">
         <Container>
-          <div className="flex items-center gap-3">
-            <span className="rule" aria-hidden />
-            <span className="eyebrow">Otras áreas</span>
-          </div>
-          <h2 className="mt-6 max-w-3xl font-serif text-3xl leading-tight tracking-tight md:text-[2.75rem]">
+          <span className="text-[11px] uppercase tracking-[0.22em] text-gold">
+            Otras áreas
+          </span>
+          <h2 className="mt-4 font-serif text-[36px] font-medium leading-tight tracking-tight text-[#1d1d1f] md:text-[44px]">
             Prácticas complementarias del estudio.
           </h2>
-          <div className="mt-12">
+          <div className="mt-10">
             {rest.map((area, i) => (
-              <PracticeAreaCard
-                key={area.slug}
-                area={area}
-                index={i + 1}
-              />
+              <PracticeAreaCard key={area.slug} area={area} index={i + 1} />
             ))}
           </div>
         </Container>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
@@ -13,7 +13,7 @@ const serif = Cormorant_Garamond({
   display: "swap",
 });
 
-const sans = Inter({
+const sans = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -43,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-CL" className={`${serif.variable} ${sans.variable}`}>
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col bg-white text-[#1d1d1f] antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
