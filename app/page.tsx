@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-white pb-20 pt-28 md:pb-28 md:pt-36">
         <ConcepcionSkyline className="pointer-events-none absolute bottom-0 left-1/2 w-[1400px] max-w-none -translate-x-1/2 text-gray-900/[0.14]" />
         <div className="relative mx-auto max-w-site px-6 text-center">
-          <h1 className="fade-up text-[40px] font-bold leading-[1.04] tracking-tight text-gray-900 md:text-[60px] lg:text-[68px]">
+          <h1 className="fade-up text-[34px] font-bold leading-[1.04] tracking-tight text-gray-900 md:text-[50px] lg:text-[56px]">
             Derecho laboral.
             <br />
             Trayectoria y
