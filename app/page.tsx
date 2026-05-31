@@ -14,14 +14,14 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-white pb-20 pt-28 md:pb-28 md:pt-36">
         <ConcepcionSkyline className="pointer-events-none absolute bottom-0 left-1/2 w-[1400px] max-w-none -translate-x-1/2 text-gray-900/[0.14]" />
         <div className="relative mx-auto max-w-site px-6 text-center">
-          <h1 className="fade-up text-[48px] font-bold leading-[1.04] tracking-tight text-gray-900 md:text-[72px] lg:text-[80px]">
+          <h1 className="fade-up text-[40px] font-bold leading-[1.04] tracking-tight text-gray-900 md:text-[60px] lg:text-[68px]">
             Derecho laboral.
             <br />
-            Tres décadas
+            Trayectoria y
             <br />
-            de experiencia.
+            cercanía.
           </h1>
-          <p className="fade-up delay-1 mx-auto mt-5 max-w-[420px] text-[17px] leading-relaxed text-gray-600 md:text-[19px]">
+          <p className="fade-up delay-1 mx-auto mt-5 max-w-[420px] text-[16px] leading-relaxed text-gray-600 md:text-[18px]">
             Estudio jurídico en Concepción para personas y empresas.
           </p>
           <div className="fade-up delay-2 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
