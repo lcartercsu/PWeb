@@ -162,7 +162,9 @@
       "Bash(mv \"05 - Informes y Auditorías\" \"04 - Informes y Auditorías\")",
       "Bash(mv \"06 - Comercial\" \"05 - Comercial\")",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "mcp__af99d3f8-6118-46b4-8731-60101d5fecb0__list_deployments"
     ]
   }
 }

@@ -103,7 +103,7 @@ export default function HomePage() {
             <TeamCard member={lead} variant="lead" />
           </div>
 
-          <div className="mt-16 grid gap-y-10 gap-x-20 sm:grid-cols-[240px_240px]">
+          <div className="mt-16 grid gap-y-12 gap-x-20 [&>*]:max-w-[240px] sm:grid-cols-[240px_240px]">
             {associates.map((m) => (
               <TeamCard key={m.slug} member={m} />
             ))}
