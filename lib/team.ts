@@ -22,7 +22,7 @@ export const team: TeamMember[] = [
     photo: "/team/abogado_rodrigo_foto_web.png",
     lead: true,
     linkedin: "https://www.linkedin.com/in/rodr%C3%ADgo-garc%C3%ADa-neiman-604059413/",
-    email: "rneiman@garcianeiman.cl",
+    email: "rgarcia@garcianeiman.cl",
     bio: "Cerca de treinta años de ejercicio profesional en Concepción. Práctica concentrada en derecho laboral, tanto en asesoría a empresas como en representación de trabajadores.",
     focus: [
       "Derecho laboral individual y colectivo",
