@@ -31,26 +31,31 @@ export function Header() {
       }`}
     >
       <nav className="mx-auto flex h-12 max-w-wide items-center justify-between px-6">
-        <Link href="/" className="text-[15px] font-semibold tracking-tight text-gray-900">
-          García Neiman
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-brand-600 text-[12px] font-bold tracking-tight text-white">
+            GN
+          </span>
+          <span className="text-[15px] font-semibold tracking-tight text-gray-900">
+            García Neiman
+          </span>
         </Link>
 
         {/* Desktop */}
         <div className="hidden items-center gap-7 md:flex">
           {site.nav
-            .filter((l) => l.href !== "/")
+            .filter((l) => l.href !== "/" && l.href !== "#contacto")
             .map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 className={`text-[13px] transition-colors ${
-                  active(l.href) ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
+                  active(l.href) ? "font-medium text-brand-600" : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 {l.label}
               </Link>
             ))}
-          <Link href="/contacto" className="btn-dark !py-1.5 !px-4 !text-[12px]">
+          <Link href="#contacto" className="btn-dark !py-1.5 !px-4 !text-[12px]">
             Contactar
           </Link>
         </div>
@@ -85,18 +90,19 @@ export function Header() {
       {open && (
         <div className="bg-white/95 backdrop-blur-2xl border-t border-gray-200/60 md:hidden">
           <div className="mx-auto flex max-w-wide flex-col px-6 py-3">
-            {site.nav.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`border-b border-gray-50 py-3 text-[15px] ${
-                  active(l.href) ? "text-gray-900" : "text-gray-600"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link href="/contacto" className="btn-dark mt-4 mb-2">
+            {site.nav
+              .filter((l) => l.href !== "#contacto")
+              .map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-gray-50 py-3 text-[15px] text-gray-600"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            <Link href="#contacto" onClick={() => setOpen(false)} className="btn-dark mt-4 mb-2">
               Contactar
             </Link>
           </div>

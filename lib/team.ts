@@ -4,8 +4,10 @@ export type TeamMember = {
   role: string;
   initials: string;
   photo?: string;
+  photoPosition?: string;
   lead?: boolean;
   linkedin?: string;
+  email?: string;
   bio: string;
   focus: string[];
   education: string[];
@@ -17,8 +19,10 @@ export const team: TeamMember[] = [
     name: "Rodrigo García Neiman",
     role: "Socio fundador",
     initials: "RG",
-    photo: "/team/rodrigo.jpg",
+    photo: "/team/abogado_rodrigo_foto_web.png",
     lead: true,
+    linkedin: "https://www.linkedin.com/in/rodr%C3%ADgo-garc%C3%ADa-neiman-604059413/",
+    email: "rneiman@garcianeiman.cl",
     bio: "Cerca de treinta años de ejercicio profesional en Concepción. Práctica concentrada en derecho laboral, tanto en asesoría a empresas como en representación de trabajadores.",
     focus: [
       "Derecho laboral individual y colectivo",
@@ -26,54 +30,51 @@ export const team: TeamMember[] = [
       "Negociación colectiva",
       "Cumplimiento normativo",
     ],
-    linkedin: "https://www.linkedin.com/in/rodrigo-garc%C3%ADa-neiman-4560852a9/",
     education: [
-      "Licenciado en Ciencias Jurídicas, Pontificia Universidad Católica de Chile",
+      "Abogado, Pontificia Universidad Católica de Chile",
     ],
   },
   {
-    slug: "abogado-asociado-1",
-    name: "María José Placeholder",
-    role: "Abogada asociada",
-    initials: "MP",
-    bio: "Dedicada al derecho laboral y seguridad social. Experiencia en litigio ante Juzgados del Trabajo y auditorías de cumplimiento.",
+    slug: "gonzalo-venegas-claramunt",
+    name: "Gonzalo Venegas Claramunt",
+    role: "Abogado asociado senior",
+    initials: "GV",
+    photo: "/team/abogado_gonzalo_foto_web.png",
+    photoPosition: "center 42%",
+    linkedin: "https://www.linkedin.com/in/gonzalo-venegas-claramunt-a0a84840/",
+    email: "gvenegas@garcianeiman.cl",
+    bio: "Litigante laboral con más de quince años de ejercicio en la Región del Biobío, especializado en defensa de trabajadores, empleadores y cumplimiento normativo.",
     focus: [
-      "Procedimientos laborales",
-      "Fiscalización y sumarios",
-      "Políticas y reglamentos internos",
+      "Litigación laboral",
+      "Derecho administrativo laboral",
+      "Cumplimiento normativo",
     ],
     education: [
-      "Licenciada en Ciencias Jurídicas, UCSC",
+      "Magíster en Derecho de la Empresa, Universidad del Desarrollo",
+      "Postítulo en Derecho Laboral, Universidad del Desarrollo",
+      "Postítulo en Derecho Administrativo General, Universidad de Concepción",
+      "Licenciado en Ciencias Jurídicas, Universidad del Desarrollo",
     ],
   },
   {
-    slug: "abogado-asociado-2",
-    name: "Ignacio Placeholder",
+    slug: "vicente-campos-caro",
+    name: "Vicente Campos Caro",
     role: "Abogado asociado",
-    initials: "IP",
-    bio: "Foco en derecho civil patrimonial y asesoría a personas. Apoyo transversal en causas laborales con materias contractuales conexas.",
+    initials: "VC",
+    photo: "/team/abogado_vicente_foto_web.png",
+    photoPosition: "center 20%",
+    linkedin: "https://www.linkedin.com/in/vicente-campos-caro/",
+    email: "vcampos@garcianeiman.cl",
+    bio: "Abogado laboralista especializado en asesoría a trabajadores y empresas. Énfasis en derecho individual y colectivo, compliance laboral y tramitación de causas.",
     focus: [
-      "Derecho civil y de familia",
-      "Contratos y responsabilidad civil",
-      "Asesoría integral a personas",
+      "Derecho laboral individual y colectivo",
+      "Compliance laboral",
+      "Tramitación de causas",
     ],
     education: [
-      "Licenciado en Ciencias Jurídicas, Universidad de Concepción",
-    ],
-  },
-  {
-    slug: "abogado-asociado-3",
-    name: "Consuelo Placeholder",
-    role: "Abogada asociada",
-    initials: "CP",
-    bio: "Interés en derecho corporativo y cumplimiento. Colabora con clientes empresariales en contratación y prevención de riesgos.",
-    focus: [
-      "Derecho corporativo",
-      "Compliance y prevención",
-      "Asesoría a empresas",
-    ],
-    education: [
-      "Licenciada en Ciencias Jurídicas, Universidad de Concepción",
+      "Diplomado en Compliance Laboral, Empresarial, Económico y Tributario, UCSC",
+      "Diplomado en Derecho del Trabajo y Negociación Colectiva en la Empresa, PUC",
+      "Licenciado en Ciencias Jurídicas y Sociales, Universidad de Concepción",
     ],
   },
 ];

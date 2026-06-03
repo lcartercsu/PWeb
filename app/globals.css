@@ -15,7 +15,7 @@
   }
 
   ::selection {
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(125, 46, 61, 0.14);
   }
 }
 
@@ -24,8 +24,9 @@
     @apply inline-flex items-center justify-center rounded-full px-7 py-3 text-[15px] font-medium transition-colors;
   }
 
+  /* Primary call to action — brand burgundy */
   .btn-dark {
-    @apply btn bg-gray-900 text-white hover:bg-gray-900/85;
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
   }
 
   .btn-light {
@@ -37,7 +38,12 @@
   }
 
   .label {
-    @apply text-[12px] font-semibold uppercase tracking-[0.06em] text-gray-500;
+    @apply text-[12px] font-semibold uppercase tracking-[0.08em] text-brand-600;
+  }
+
+  /* Inline text link with arrow */
+  .link-arrow {
+    @apply inline-flex text-[14px] font-medium text-brand-600 transition-colors hover:text-brand-700;
   }
 }
 

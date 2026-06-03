@@ -7,17 +7,16 @@ export const site = {
     "Estudio jurídico en Concepción con una trayectoria de casi 30 años. Asesoría integral a personas y empresas, con énfasis en derecho laboral.",
   contact: {
     email: "contacto@garcianeiman.cl",
-    phone: "(41) 2913070",
+    phone: "(41) 291 3070",
     address: "Colo-Colo 379, oficina 1405",
     city: "Concepción, Región del Biobío, Chile",
-    hours: "Lunes a viernes · 09:00 a 18:00 hrs.",
+    hours: "Lunes a viernes · 09:00 a 14:00 y 15:00 a 18:00 hrs.",
   },
   nav: [
     { href: "/", label: "Inicio" },
-    { href: "/estudio", label: "Estudio" },
-    { href: "/equipo", label: "Equipo" },
-    { href: "/areas", label: "Áreas de práctica" },
-    { href: "/contacto", label: "Contacto" },
+    { href: "#equipo", label: "Equipo" },
+    { href: "#estudio", label: "Estudio" },
+    { href: "#contacto", label: "Contacto" },
   ],
 } as const;
 

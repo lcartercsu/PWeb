@@ -15,6 +15,11 @@ const config: Config = {
           600: "#6e6e73",
           900: "#1d1d1f",
         },
+        brand: {
+          50: "#f8eef0",
+          600: "#7d2e3d",
+          700: "#5f2230",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
