@@ -1,46 +1,60 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { site } from "@/lib/site";
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState("");
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("sending");
+    setError("");
 
     const form = new FormData(event.currentTarget);
-    const nombre = String(form.get("nombre") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const telefono = String(form.get("telefono") || "").trim();
-    const materia = String(form.get("materia") || "").trim();
-    const mensaje = String(form.get("mensaje") || "").trim();
+    const payload = {
+      nombre: String(form.get("nombre") || "").trim(),
+      email: String(form.get("email") || "").trim(),
+      telefono: String(form.get("telefono") || "").trim(),
+      materia: String(form.get("materia") || "").trim(),
+      mensaje: String(form.get("mensaje") || "").trim(),
+      empresa: String(form.get("empresa") || "").trim(),
+    };
 
-    const subject = materia || `Consulta desde ${site.domain}`;
-    const body = [
-      "Consulta enviada desde el sitio web.",
-      "",
-      `Nombre: ${nombre}`,
-      `Email: ${email}`,
-      telefono ? `Teléfono: ${telefono}` : null,
-      materia ? `Materia: ${materia}` : null,
-      "",
-      "Mensaje:",
-      mensaje,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    try {
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data.error || "No fue posible enviar la consulta.");
+      }
+
+      event.currentTarget.reset();
+      setStatus("sent");
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "No fue posible enviar la consulta.");
+    }
   }
 
   return (
     <form onSubmit={onSubmit} className="grid gap-5" aria-label="Contacto">
+      <input
+        type="text"
+        name="empresa"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       <Field label="Nombre *" name="nombre" required />
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Email *" name="email" type="email" required />
-        <Field label="Teléfono" name="telefono" type="tel" />
+        <Field label="Telefono" name="telefono" type="tel" />
       </div>
       <Field label="Materia" name="materia" />
       <div className="flex flex-col gap-1.5">
@@ -59,13 +73,22 @@ export function ContactForm() {
         Acepto que los datos se usen exclusivamente para responder esta consulta. *
       </label>
 
-      <button type="submit" className="btn-dark mt-1 w-fit">
-        Enviar
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="btn-dark mt-1 w-fit disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {status === "sending" ? "Enviando..." : "Enviar"}
       </button>
 
-      {sent ? (
+      {status === "sent" ? (
         <p className="text-[13px] leading-relaxed text-gray-500">
-          Se abrió su aplicación de correo para completar el envío.
+          Consulta enviada correctamente. Le responderemos a la brevedad.
+        </p>
+      ) : null}
+      {status === "error" ? (
+        <p className="text-[13px] leading-relaxed text-brand-600">
+          {error}
         </p>
       ) : null}
     </form>
