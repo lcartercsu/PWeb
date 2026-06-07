@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { team } from "@/lib/team";
 import { ConcepcionSkyline } from "@/components/ConcepcionSkyline";
+import { ContactForm } from "@/components/ContactForm";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TeamCard } from "@/components/TeamCard";
 
@@ -202,6 +203,7 @@ export default function HomePage() {
 
             {/* Form */}
             <div>
+              <ContactForm />{/*
               <form method="post" action="#" className="grid gap-5" aria-label="Contacto">
                 <Field label="Nombre *" name="nombre" required />
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -229,6 +231,7 @@ export default function HomePage() {
                   Enviar
                 </button>
               </form>
+              */}
             </div>
           </div>
 
