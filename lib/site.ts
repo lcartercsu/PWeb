@@ -12,6 +12,9 @@ export const site = {
     city: "Concepción, Región del Biobío, Chile",
     hours: "Lunes a viernes · 09:00 a 14:00 y 15:00 a 18:00 hrs.",
   },
+  social: {
+    linkedin: "https://www.linkedin.com/company/garc%C3%ADa-neiman-asociados",
+  },
   nav: [
     { href: "/", label: "Inicio" },
     { href: "#equipo", label: "Equipo" },

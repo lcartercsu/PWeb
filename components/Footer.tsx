@@ -22,6 +22,9 @@ export function Footer() {
           <a href={`mailto:${site.contact.email}`} className="block hover:text-gray-900">
             {site.contact.email}
           </a>
+          <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" className="block hover:text-gray-900">
+            LinkedIn
+          </a>
           <p className="text-gray-500">{site.contact.hours}</p>
         </div>
 

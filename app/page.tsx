@@ -186,6 +186,14 @@ export default function HomePage() {
                   >
                     {site.contact.email}
                   </a>
+                  <a
+                    href={site.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 block text-[14px] font-semibold text-gray-900 hover:text-brand-600"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
                 <div>
                   <p className="label">Horario</p>
