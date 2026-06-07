@@ -8,10 +8,11 @@ export function ContactForm() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setStatus("sending");
     setError("");
 
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const payload = {
       nombre: String(form.get("nombre") || "").trim(),
       email: String(form.get("email") || "").trim(),
@@ -33,7 +34,7 @@ export function ContactForm() {
         throw new Error(data.error || "No fue posible enviar la consulta.");
       }
 
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus("sent");
     } catch (err) {
       setStatus("error");
