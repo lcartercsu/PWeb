@@ -56,25 +56,4 @@ export const team: TeamMember[] = [
       "Licenciado en Ciencias Jurídicas, Universidad del Desarrollo",
     ],
   },
-  {
-    slug: "vicente-campos-caro",
-    name: "Vicente Campos Caro",
-    role: "Abogado asociado",
-    initials: "VC",
-    photo: "/team/abogado_vicente_foto_web.png",
-    photoPosition: "center 20%",
-    linkedin: "https://www.linkedin.com/in/vicente-campos-caro/",
-    email: "vcampos@garcianeiman.cl",
-    bio: "Abogado laboralista especializado en asesoría a trabajadores y empresas. Énfasis en derecho individual y colectivo, compliance laboral y tramitación de causas.",
-    focus: [
-      "Derecho laboral individual y colectivo",
-      "Compliance laboral",
-      "Tramitación de causas",
-    ],
-    education: [
-      "Diplomado en Compliance Laboral, Empresarial, Económico y Tributario, UCSC",
-      "Diplomado en Derecho del Trabajo y Negociación Colectiva en la Empresa, PUC",
-      "Licenciado en Ciencias Jurídicas y Sociales, Universidad de Concepción",
-    ],
-  },
 ];

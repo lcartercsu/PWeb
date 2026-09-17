@@ -96,7 +96,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-site px-6">
           <SectionHeader
             eyebrow="Equipo"
-            title="Tres abogados. Un criterio."
+            title="Dos abogados. Un criterio."
             description="Equipo integrado bajo la dirección de Rodrigo García Neiman. Cada abogado participa directamente en los asuntos encomendados."
           />
 
